@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Dsktp</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"> </script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+	$(document).ready(function(){$('[data-toggle="tooltip"]').tooltip();});
+  </script>
+</head>
+
+<body>
+
+  <div class="container">
+    <%= render 'layouts/header2' %>
+  </div>
+
+  <%= yield %> 
+
+</body>
+</html>

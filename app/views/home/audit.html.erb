@@ -1,0 +1,96 @@
+<div class="container">
+	<div class="row">
+	
+		<div class="col-lg-12">
+  			<div class="jumbotron">
+    			<h2><span class="text-primary">deep 'O' audit</span></h2>      
+       			<p>
+    				It is a Network Management Tool that help's to audit various client system connected to a network. The script runs on the client's machine and gather's the information and later it is parsed and sent to the server.
+
+    				<br /><br />
+
+    				You can try the way it works by pressing the "Magic Button". For a complete trial please login or Sign-up if not registered.
+
+    			</p>
+  			</div>
+  		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2">
+			<div class="nav navbar-inverse" role="navigation">
+        		<ul class="nav nav-pills nav-stacked">
+				    <li class="active"><a href="#">System</a></li>
+        			<li><a href="#">Hardware</a></li>
+        			<li><a href="#">Software</a></li>
+        			<li><a href="#">Export</a></li>
+      			</ul>
+      		</div>
+    	</div>
+
+  		<div class="col-lg-5">
+			<div id="page-wrapper">
+   		  		<div class="panel panel-default">
+					<div class="panel-heading">
+			        	<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="text-info">For Windows</span></a></h4>
+			    	</div>
+			            
+			    	<div id="collapseOne" class="panel-collapse collapse">
+			      		<div class="panel-body bg-info">
+			      			<p>
+			      				The script can run on any window system be it XP, Windows 7 / 8 or Server. The script will upload your configurations on our server for a temporary period. Please accept the agreement for running the script and then press the button to download and run it.
+			      			</p>
+
+			      			<form name="myform" action="" method="post" accept-charset="utf-8">
+
+			                <input type="button" value="Audit Script-win" class="btn btn-primary btn-lg" onclick="audit_my_pc_win()"/>
+			                
+							<script language="vbscript" type="text/javascript">
+								function audit_my_pc_win()
+								{
+									location.href = '/assets/audit_windows.vbs'
+								}
+							</script>
+
+							</form>
+
+			        	</div>
+			    	</div>
+				</div>
+	    	</div>
+		</div>
+
+		<div class="col-lg-5">
+			<div id="page-wrapper">
+   		 		<div class="panel panel-default">
+					<div class="panel-heading">
+			        	<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="text-danger">For Linux</span></a></h4>
+			    	</div>
+			            
+			    	<div id="collapseTwo" class="panel-collapse collapse">
+			      		<div class="panel-body bg-warning">
+			                <p>
+			      				The script can run on any linux or debian system. The script will upload your configurations on our server for a temporary period. Please accept the agreement for running the script and then press the button to download and run it.
+			      			</p>
+
+			      			<form name="myform" action="" method="post" accept-charset="utf-8">
+
+			                <input type="button" value="Audit Script-lin" class="btn btn-primary btn-lg" onclick="audit_my_pc_lin()"/>	
+			                <script language="shell" type="text/javascript">
+								function audit_my_pc_lin()
+								{
+									location.href = '/assets/audit_linux.sh'
+								}
+							</script>
+
+							</form>
+
+			        	</div>
+			    	</div>
+				</div>
+	    	</div>
+		</div>
+	</div>
+</div>

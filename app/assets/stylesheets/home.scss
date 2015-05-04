@@ -1,0 +1,27 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Forms for User signin/singup etc...........
+-------------------------------------------------- */
+.signin
+{
+   padding: 10px;
+   font-size: 16px;
+   margin: 0 auto;
+   background: #F8F8F8;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+#myCarousel .nav a small
+{display:block;}
+
+#myCarousel .nav
+{background:#eee;}

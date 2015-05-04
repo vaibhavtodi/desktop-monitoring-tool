@@ -1,0 +1,30 @@
+<br /><br /><br />
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-3">
+		
+		<h1 class="page-header bg-warning">
+			Details
+		</h1>
+
+		<p id="notice"><%= notice %></p>
+
+		<p>
+		  <strong>Title:</strong>
+		  <%= @note.title %>
+		</p>
+
+		<p>
+		  <strong>Text:</strong>
+		  <%= @note.text %>
+		</p>
+
+		<p>
+		  <strong>Starred:</strong>
+		  <%= @note.starred %>
+		</p>
+
+		<%= link_to 'Edit', edit_note_path(@note) %> |
+		<%= link_to 'Back', notes_path %>
+	
+	</div>
+</div>
