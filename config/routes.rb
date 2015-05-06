@@ -1,10 +1,25 @@
 Rails.application.routes.draw do
   
+  get 'recxml/rec_xml'
+
+  get 'recxml/parse'
+
+  get 'recxml/store'
+
+  get 'recxml/index'
+
+  get 'recxml/show'
+
   root 'home#index'
 
   devise_for :users
-
   resources :notes
+
+  resources :recxmls do
+    collection do
+      post 'index', :content_type => "application/x-www-form-urlencoder", :accept => "application/json"
+    end
+  end
    
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
@@ -16,8 +31,9 @@ Rails.application.routes.draw do
 
   # get 'audit_info/index'
   # get 'audit_info/info'
-
-  post 'receive_xml/recxml'
+  
+  # get 'receive_xml/recxml'
+  # get 'receive_xml/show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -74,4 +90,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end

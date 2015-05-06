@@ -1,7 +1,7 @@
 class Service
   include Mongoid::Document
 
-  embedded_in :sft_key
+  embedded_in :system
 
 	field :service_description,			    type: String
 	field :service_display_name,		    type: String
@@ -11,5 +11,4 @@ class Service
 	field :service_start_name,			    type: String
 	field :service_start_mode,			    type: String
 	field :service_state,		    		type: String
-
 end

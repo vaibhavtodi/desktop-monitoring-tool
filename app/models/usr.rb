@@ -1,7 +1,7 @@
 class Usr
   include Mongoid::Document
 
-  embedded_in :window
+  embedded_in :system
 
    	field :user_name,     					  type: String
   	field :user_caption, 				      type: String
@@ -14,6 +14,4 @@ class Usr
   	field :user_password_required,		type: Boolean
 	  field :user_status,					      type: String
 	  field :user_type,					        type: String
-
-  embeds_many :logs
 end

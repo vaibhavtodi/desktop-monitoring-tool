@@ -1,7 +1,7 @@
 class Partition
   include Mongoid::Document
 
-  embedded_in :optical_drive
+  embedded_in :system
 
   	field :hard_drive_index,				  	type: Integer
 
@@ -20,7 +20,4 @@ class Partition
   	field :partition_quotas_supported,	type: String
   	field :partition_quotas_enabled,		type: String
   	field :partition_serial,					  type: String
-
-  embeds_many :processors
-
 end

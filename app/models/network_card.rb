@@ -1,7 +1,7 @@
 class NetworkCard
   include Mongoid::Document
 
-  embedded_in :mother_board
+  embedded_in :system
 
    	field :net_mac_address,				  	    type: String
   	field :net_manufacturer,				      type: String
@@ -24,7 +24,4 @@ class NetworkCard
     field :net_wins_primary,				      type: String
 	  field :net_wins_secondary,				    type: String
 	  field :net_wins_lmhosts_enabled,		  type: Boolean
-
-  embeds_many :optical_drives
-
 end

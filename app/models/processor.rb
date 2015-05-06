@@ -1,7 +1,7 @@
 class Processor
   include Mongoid::Document
 
-  embedded_in :partition
+  embedded_in :system
 
   	field :processor_count,						            type: Integer
   	field :processor_cores,						            type: Integer
@@ -12,7 +12,4 @@ class Processor
   	field :processor_manufacturer,					      type: String
   	field :processor_architecture,					      type: String
   	field :processor_power_management_supported,	type: Boolean
-
-  embeds_many :scsi_cntrls, store_as: "scsi_controllers"
-
 end

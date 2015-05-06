@@ -9,6 +9,7 @@ gem 'devise'
 gem 'sinatra'
 gem 'nokogiri'
 
+gem 'mongo'
 gem 'mongoid'
 gem 'mongoid-versioning'
 gem 'mongoid-history'
@@ -20,8 +21,6 @@ gem 'bootstrap-sass'
 gem 'rails_12factor', group: :production
 
 gem 'json'
-#gem 'net/http'
-#gem 'openuri'
 
 
 # Use SCSS for stylesheets

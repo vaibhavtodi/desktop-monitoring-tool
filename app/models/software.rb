@@ -1,7 +1,7 @@
 class Software
   include Mongoid::Document
 
-  embedded_in :video_card
+  embedded_in :system
 
 	field :software_name,				    	type: String
 	field :software_version,				    type: String
@@ -11,7 +11,4 @@ class Software
 	field :software_install_source,			    type: String
 	field :software_system_component,		    type: String
 	field :software_url,					    type: String
-	
-  embeds_many :sft_keys
-
 end

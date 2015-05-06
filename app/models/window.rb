@@ -21,6 +21,4 @@ class Window
   	field :windows_service_pack,			  	    type: Integer
 	  field :windows_version,					          type: String
 	  field :windows_install_directory,		      type: String
-
-  embeds_many :usrs, store_as: "users"
 end
