@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   
   get 'recxml/rec_xml'
 
+  get 'recxml/display'
+
+  get 'recxml/rec_xml'
+
   get 'recxml/parse'
 
   get 'recxml/store'

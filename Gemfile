@@ -6,21 +6,22 @@ ruby '2.2.0'
 gem 'rails', '4.2.1'
 
 gem 'devise'
-gem 'sinatra'
+
 gem 'nokogiri'
+gem 'crack'
 
 gem 'mongo'
 gem 'mongoid'
 gem 'mongoid-versioning'
 gem 'mongoid-history'
 
+gem 'json'
 gem 'bson_ext'
+
 gem 'bootstrap-sass'
 
 # gem for heroku
 gem 'rails_12factor', group: :production
-
-gem 'json'
 
 
 # Use SCSS for stylesheets
