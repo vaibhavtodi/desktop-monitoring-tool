@@ -4,7 +4,7 @@
         <ul class="sidebar-nav">
 
             <li class="sidebar-brand">
-                <a href="/audit_info/index"> INDEX </a>
+                <a href="#"> INDEX </a>
             </li>
 
             <li data-toggle="collapse" data-target="#dashboard" class="collapsed active">
@@ -58,7 +58,7 @@
             </li>
             
             <li>
-                <%= link_to("Notes", notes_path) %>
+                <%= link_to('Notes', notes_path) %>
             </li>
 
         </ul>
@@ -68,45 +68,10 @@
     
     <div id="page-wrapper page-content-wrapper">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                  <p id="notice">
-                    <%= notice %>
-                  </p>
-
-                  <h1 class="page-header bg-warning">Listing Notes</h1>
-
-                  <table class="table table-striped table-hover">
-                    <thead>
-                      <tr>
-                        <th> Title </th>
-                        <th> Text </th>
-                        <th> Starred </th>
-                        <th colspan="3"></th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <% @notes.each do |note| %>
-                        <tr>
-                          <td><%= note.title %></td>
-                          <td><%= note.text %></td>
-                          <td><%= note.starred %></td>
-                          <td><%= link_to 'Show', note %></td>
-                          <td><%= link_to 'Edit', edit_note_path(note) %></td>
-                          <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                        </tr>
-                      <% end %>
-                    </tbody>
-                  </table>
-                </div>
-            </div>    
-
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                  <%= link_to 'Add New Note', new_note_path %>
-                </div>
-            </div>
+            
+        
+            <%= yield %>
+            
         </div>
     </div>
 </div>

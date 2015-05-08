@@ -5,12 +5,8 @@ ruby '2.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
-gem 'devise'
-
 gem 'nokogiri'
-gem 'crack'
 
-gem 'mongo'
 gem 'mongoid'
 gem 'mongoid-versioning'
 gem 'mongoid-history'
@@ -18,11 +14,11 @@ gem 'mongoid-history'
 gem 'json'
 gem 'bson_ext'
 
+gem 'devise'
 gem 'bootstrap-sass'
 
 # gem for heroku
 gem 'rails_12factor', group: :production
-
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
