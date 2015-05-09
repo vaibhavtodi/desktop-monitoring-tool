@@ -23,9 +23,9 @@ class RecxmlController < ApplicationController
   
     # Extracting the content for System
     sys = Array.new  
-    doc.xpath('//sys').each do |node|
-      sys << node.content      
-    end
+      doc.xpath('//sys').each do |node|
+        sys << node.content      
+      end
 
       puts "Content of the array - System"
       sys.each do |a|
@@ -34,14 +34,27 @@ class RecxmlController < ApplicationController
 
     # Extracting the content for Network Card
     nw = Array.new  
-    doc.xpath('//network_card').each do |node|
-      nw << node.content      
-    end
+      doc.xpath('//network_card').each do |node|
+        nw << node.content      
+      end
 
       puts "Content of the array - network card"
       nw.each do |a|
         puts "#{a} --- "
       end
+
+        #node.traverse {|node|}
+        #node.each do |key, value|
+        #puts node.attr.
+        #puts node.content
+
+        #if node.blank?
+        #  puts "blank node"
+        #else
+        #end
+        
+        #end
+
 
   end
 

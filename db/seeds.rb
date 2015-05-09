@@ -10,7 +10,7 @@
 ## Setting up a default user - Admin
 puts 'SETTING UP DEFAULT USER LOGIN'
 
-	user = User.create! :name => 'Admin', :email => 'admin@example.com',
-	       :password => 'password', :password_confirmation => 'password'
+	user = User.create! :name => 'Vaibhav_todi', :email => 'vaibhavtodi1989@gmail.com',
+	       :password => 'vaibhav1989', :password_confirmation => 'vaibhav1989'
 
 puts 'New user created: ' << user.name

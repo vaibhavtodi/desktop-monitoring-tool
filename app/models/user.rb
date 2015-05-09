@@ -11,9 +11,11 @@ class User
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
 
-  #validates_presence_of :name
+  validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
-  #attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  
+    #TODO
+    #attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -40,6 +42,7 @@ class User
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
 
+  
   # Relationship with notes
   has_many :notes, dependent: :delete, autosave: true
 
