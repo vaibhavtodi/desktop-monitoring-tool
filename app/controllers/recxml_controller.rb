@@ -12,50 +12,54 @@ class RecxmlController < ApplicationController
       xmlfile.write(doc)
     xmlfile.close
   
-  redirect_to :action => 'parse'
+    redirect_to :action => 'parse'
   end
 
   def parse
-
     f = File.open("tmp/xml_files/a.xml", "r")
       doc = Nokogiri::XML(f)
     f.close
   
     # Extracting the content for System
-    sys = Array.new  
-      doc.xpath('//sys').each do |node|
-        sys << node.content      
+    sys = Hash.new  
+      doc.xpath('//sys').children.each do |node|
+        if !node.blank? then
+          #puts "#{node.name}   ::   #{node.content}"
+          sys[node.name] = node.content
+        end 
       end
-
-      puts "Content of the array - System"
-      sys.each do |a|
-        puts "#{a} --- "
-      end
-
-    # Extracting the content for Network Card
-    nw = Array.new  
-      doc.xpath('//network_card').each do |node|
-        nw << node.content      
-      end
-
-      puts "Content of the array - network card"
-      nw.each do |a|
-        puts "#{a} --- "
-      end
-
-        #node.traverse {|node|}
-        #node.each do |key, value|
-        #puts node.attr.
-        #puts node.content
-
-        #if node.blank?
-        #  puts "blank node"
-        #else
-        #end
         
-        #end
+    # Extracting the content for Network Card
+    nc_com = Array.new
+      nc = Hash.new
+        count = 0 
+        i = 0
+        doc.xpath('//network_card').children.each do |node|
+            
+            if !node.blank? then
+              count += 1
+              #puts "Count = #{count} <<----->> #{node.name}   ::   #{node.content}"
+              nc[node.name] = node.content
+            end
 
+            if count == 21 then
+              #puts "------------------ Content of hash ----------------------"
+              #nc.each { |k, v| puts "#{k}   ::   #{v}" }
+              
+              nc_com[i] = nc
+              
+              puts "?????????????------------------------------?????????????"
+              pp nc_com[i]
+              puts "?????????????------------------------------?????????????"
+
+              nc.clear
+              count = 0
+              i += 1
+            end
+        end
+
+        puts "Lenght of array :: #{nc_com.length}"
+        puts "Count of array :: #{nc_com.count}"
 
   end
-
 end
