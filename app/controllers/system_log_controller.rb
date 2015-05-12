@@ -1,0 +1,2 @@
+class SystemLogController < ApplicationController
+end

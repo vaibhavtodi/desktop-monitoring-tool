@@ -1,0 +1,2 @@
+module SystemLogHelper
+end
