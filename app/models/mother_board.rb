@@ -1,7 +1,7 @@
 class MotherBoard
   include Mongoid::Document
 
-  embedded_in :system
+  embedded_in :sys
 
    	field :manufacturer,					type: String
   	field :model,							type: String

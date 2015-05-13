@@ -1,18 +1,16 @@
 class RecxmlController < ApplicationController
 
   def rec_xml
-    # Reads xml file pushed by the client from the buffer
-    xmlbuf = params[:form_systemXML]
-     
-    # Parsing & saving the xml to a local file   
-    #xmlfile = File.open("tmp/xml_files/a.xml", "w")
-    #  doc = Nokogiri::XML(xmlbuf) do |config|
-    #    config.strict.noblanks
-    #  end
-    #  xmlfile.write(doc)
-    #xmlfile.close
+    
+      myXML  = Crack::XML.parse(File.read("tmp/xml_files/a.xml"))
+      myJSON = myXML.to_json
+      
+    f = File.open("tmp/xml_files/sample.json", "w")
+      f.write(myJSON)
+    f.close
 
-    redirect_to :action => 'check_os'
+
+    #redirect_to :action => 'check_os'
   end
     
   def check_os

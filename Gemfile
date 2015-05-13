@@ -6,6 +6,7 @@ ruby '2.2.0'
 gem 'rails', '4.2.1'
 
 gem 'nokogiri'
+gem 'crack'
 
 gem 'mongoid'
 gem 'mongoid-versioning'
@@ -52,6 +53,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'pry'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

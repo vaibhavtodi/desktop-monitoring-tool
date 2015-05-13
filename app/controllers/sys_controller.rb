@@ -1,0 +1,2 @@
+class SysController < ApplicationController
+end

@@ -1,7 +1,7 @@
 class Processor
   include Mongoid::Document
 
-  embedded_in :system
+  embedded_in :sys
 
   	field :processor_count,						            type: Integer
   	field :processor_cores,						            type: Integer

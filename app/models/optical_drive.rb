@@ -1,7 +1,7 @@
 class OpticalDrive
   include Mongoid::Document
 
-  embedded_in :system
+  embedded_in :sys
 
   	field :optical_drive_caption,					type: String
 	field :optical_drive_model,						type: String

@@ -1,10 +1,9 @@
 class Partition
   include Mongoid::Document
 
-  embedded_in :system
+  embedded_in :sys
 
-  	field :hard_drive_index,				  	type: Integer
-
+  	field :hard_drive_index,				  	type: String
   	field :partition_mount_type,				type: String
   	field :partition_mount_point,				type: String
   	field :partition_name,					  	type: String

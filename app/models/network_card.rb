@@ -1,14 +1,14 @@
 class NetworkCard
   include Mongoid::Document
 
-  embedded_in :system
+  embedded_in :sys
 
-   	field :net_mac_address,				  	    type: String
+   	field :net_index,                     type: Integer
+    field :net_mac_address,				  	    type: String
   	field :net_manufacturer,				      type: String
   	field :net_model,					            type: String
   	field :net_description,					      type: String
   	field :net_ip_enabled,					      type: Boolean
-  	field :net_index,					            type: Integer
   	field :net_connection_id,			        type: String
   	field :net_connection_status,			    type: String
   	field :net_speed,					            type: Integer
