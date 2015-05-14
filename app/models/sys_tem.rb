@@ -40,28 +40,26 @@ class SysTem
 
 
   #hardware
-  embeds_many :bios,		  store_as: "bios",          cascade_callbacks: true
+  embeds_many :bios,		      store_as: "bios",      cascade_callbacks: true
   embeds_many :hard_disks,                           cascade_callbacks: true
   embeds_many :memorys,                              cascade_callbacks: true
   embeds_many :mntrs,         store_as: "monitors",  cascade_callbacks: true
   embeds_many :modems,                               cascade_callbacks: true
   embeds_many :mother_boards,                        cascade_callbacks: true
   embeds_many :network_cards,                        cascade_callbacks: true
-  embeds_many :optical_drives,                       cascade_callbacks: true
   embeds_many :partitions,                           cascade_callbacks: true
   embeds_many :processors,                           cascade_callbacks: true
   embeds_many :sound_cards,                          cascade_callbacks: true
   embeds_many :video_cards,                          cascade_callbacks: true
-  
-  embeds_many :ipadds,        store_as: "ip_address",        cascade_callbacks: true
-  embeds_many :scsi_cntrls,   store_as: "scsi_controllers",  cascade_callbacks: true
-
+  embeds_many :ipadds,         store_as: "ip_address",       cascade_callbacks: true
+  embeds_many :scsi_cntrls,    store_as: "scsi_controllers", cascade_callbacks: true
+  embeds_many :optical_drifes, store_as: "optical_drives",   cascade_callbacks: true
 
   #software
   embeds_many :softwares,                            cascade_callbacks: true
   embeds_many :services,                             cascade_callbacks: true
   embeds_many :sft_keys,  store_as: "software_keys", cascade_callbacks: true
   
-  #index({hostname: 1, man_ip_address: 1, net_mac_address: 1}, {unique: true})
+  index({hostname: 1, man_ip_address: 1, net_mac_address: 1}, {unique: true})
 
 end

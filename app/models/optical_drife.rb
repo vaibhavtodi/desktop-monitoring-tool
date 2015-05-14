@@ -1,4 +1,4 @@
-class OpticalDrive
+class OpticalDrife
   include Mongoid::Document
 
   embedded_in :sys_tem

@@ -54,10 +54,10 @@ class RecxmlController < ApplicationController
     # Check for OS_Name and then direct it to the proper action
     if str.eql? ("Windows") then
       puts "!!!!!!!!!!!! REDIRECTING TO WINDOWS PARSER !!!!!!!!!!!!"
-      redirect_to :controller => 'sys', :action => 'parse_win'
+      redirect_to :controller => 'sys_tem', :action => 'parse_win'
     else
       puts "!!!!!!!!!!!! REDIRECTING TO LINUX PARSER !!!!!!!!!!!!"
-      redirect_to :controller => 'sys', :action => 'parse_lin'
+      redirect_to :controller => 'sys_tem', :action => 'parse_lin'
     end
   end
 end

@@ -1,4 +1,5 @@
 class SysTemController < ApplicationController
+
   	def parse_win
 	# Opening XML file for reading
     f = File.open("tmp/xml_files/a.xml", "r")
@@ -330,10 +331,14 @@ class SysTemController < ApplicationController
         		doc.xpath('//user').children.each do |node|
           			if !node.blank? then
             			count += 1
-            			
-            			if !node.content.blank? then
-            				us[node.name] = node.content
-            			end
+            			   
+                  if node.matches?('user_password_changeable') || node.matches?('user_password_expires') || node.matches?('user_password_required') then
+                  # Puts "DO NOTHING"  
+                  else
+            			    if !node.content.blank? then
+            				    us[node.name] = node.content
+            			    end
+                  end
           			end
 
           			if count == 11 then
@@ -437,12 +442,82 @@ class SysTemController < ApplicationController
         		puts "VALUES IN Routes - array of hashes"
         		pp route
 
-  	    s = SysTem.new(sy)
-    		s.bios.new(bs)
-    		s.processors.new(proc)
-    		s.windows.new(win)
-    		s.mother_boards.new(m_board)
-    	s.save
+    s = SysTem.new(sy)
+        s.windows.new(win)
+        s.bios.new(bs)
+        s.processors.new(proc)
+
+        scsi_c.each do |a|
+          s.scsi_cntrls.new(a)
+        end          
+
+        memory.each do |a|
+          s.memorys.new(a)
+        end          
+ 
+        s.mother_boards.new(m_board)
+        
+        o_drive.each do |a|
+          s.optical_drifes.new(a)
+        end          
+
+        modem.each do |a|
+          s.modems.new(a)
+        end          
+
+        v_card.each do |a|
+          s.video_cards.new(a)
+        end
+
+        monitor.each do |a|
+          s.mntrs.new(a)
+        end
+
+        s_card.each do |a|
+          s.sound_cards.new(a)
+        end          
+
+        hrd_dsk.each do |a|
+          s.hard_disks.new(a)
+        end          
+
+        partition.each do |a|
+          s.partitions.new(a)
+        end          
+
+        shrs.each do |a|
+          s.shares.new(a)
+        end          
+
+        n_card.each do |a|
+          s.network_cards.new(a)
+        end          
+
+        log.each do |a|
+          s.logs.new(a)
+        end          
+
+        usr.each do |a|
+          s.usrs.new(a)
+        end
+
+        software.each do |a|
+          s.softwares.new(a)
+        end          
+          
+        service.each do |a|
+          s.services.new(a)
+        end          
+
+        sft_key.each do |a|
+          s.sft_keys.new(a)
+        end          
+
+        route.each do |a|
+          s.routes.new(a)
+        end          
+    s.save
+
   	end
 
   	def parse_lin
@@ -525,7 +600,7 @@ class SysTemController < ApplicationController
           		puts "VALUES IN Sound Card - array of hashes"
           		pp s_card
 
- 	    # Extracting the content for Shares
+ 	      # Extracting the content for Shares
       	shrs = Array.new()
         	sh = Hash.new
         	count = 0
@@ -668,7 +743,7 @@ class SysTemController < ApplicationController
         	pp pf
 
       	# Extracting the content for Users
-     	usr = Array.new()
+     	  usr = Array.new()
         	us = Hash.new
         	count = 0
           		doc.xpath('//user').children.each do |node|
@@ -754,5 +829,61 @@ class SysTemController < ApplicationController
           		end
           		puts "VALUES IN Routes - array of hashes"
           		pp route
+
+    s = SysTem.new(sy)
+      s.bios.new(bs)
+      s.processors.new(proc)
+
+        v_card.each do |a|
+          s.video_cards.new(a)
+        end
+
+        s_card.each do |a|
+          s.sound_cards.new(a)
+        end          
+
+        shrs.each do |a|
+          s.shares.new(a)
+        end
+
+        n_card.each do |a|
+          s.network_cards.new(a)
+        end          
+
+        ip_add.each do |a|
+          s.ipadds.new(a)
+        end
+
+        hrd_dsk.each do |a|
+          s.hard_disks.new(a)
+        end          
+
+        partition.each do |a|
+          s.partitions.new(a)
+        end          
+
+        log.each do |a|
+          s.logs.new(a)
+        end          
+
+        s.pagefiles.new(pf)
+
+        usr.each do |a|
+          s.usrs.new(a)
+        end
+
+        software.each do |a|
+          s.softwares.new(a)
+        end          
+          
+        service.each do |a|
+          s.services.new(a)
+        end          
+
+        route.each do |a|
+          s.routes.new(a)
+        end          
+    s.save
+  
     end
 end

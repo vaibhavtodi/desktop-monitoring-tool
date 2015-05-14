@@ -5,7 +5,7 @@ class Mntr
   
   	field :manufacturer,					  type: String
   	field :device_id,						    type: String
-	  field :manufacturer_date,				type: Date
+	  field :manufacture_date,				type: String
   	field :model,							      type: String
   	field :serial,							    type: String
   	field :edid_version,					  type: String

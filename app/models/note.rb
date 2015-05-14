@@ -11,6 +11,6 @@ class Note
   validates_presence_of :title, :text
   validates_uniqueness_of :title
 
-  #index({title: 1, starred: 1}) 
+  index({title: 1, starred: 1}) 
 
 end

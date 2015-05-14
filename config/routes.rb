@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'sys_tem/parse_win'
-
-  get 'sys_tem/parse_lin'
-
   root 'home#index'
 
   devise_for :users
