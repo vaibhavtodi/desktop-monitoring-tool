@@ -1,12 +1,12 @@
 class OpticalDrive
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
-  	field :bios_description,					type: String
-  	field :bios_manufacturer,					type: String
-  	field :bios_serial,							type: String
-  	field :bios_smversion,						type: String
-  	field :bios_version,						type: String
-  	field :bios_asset_tag,						type: String
+  	field :optical_drive_caption,						type: String
+  	field :optical_drive_model,							type: String
+  	field :optical_drive_device_id,						type: String
+  	field :optical_drive_mount_point,					type: String
+  	field :optical_drive_serial,						type: String
+  	
 end

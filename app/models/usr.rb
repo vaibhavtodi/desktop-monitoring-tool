@@ -1,7 +1,7 @@
 class Usr
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
    	field :user_name,     					  type: String
   	field :user_caption, 				      type: String

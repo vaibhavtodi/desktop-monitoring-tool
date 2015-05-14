@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'sys/parse_win'
+  get 'sys_tem/parse_win'
 
-  get 'sys/parse_lin'
+  get 'sys_tem/parse_lin'
 
   root 'home#index'
 
@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   # get 'audit_info/info'
   
   # get 'receive_xml/recxml'
-  # get 'receive_xml/show'
+
+  # get 'sys/parse_win'
+  # get 'sys/parse_lin'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

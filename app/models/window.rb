@@ -1,7 +1,7 @@
 class Window
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
   	field :windows_build_number,			        type: String
   	field :windows_user_name,				          type: String

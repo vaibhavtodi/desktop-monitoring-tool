@@ -1,7 +1,7 @@
 class SoundCard
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
   	field :sound_name,					type: String
   	field :sound_manufacturer,			type: String

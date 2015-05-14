@@ -1,7 +1,7 @@
 class Modem
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
   
   	field :port,							type: String
   	field :model,							type: String

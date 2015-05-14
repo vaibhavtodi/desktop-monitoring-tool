@@ -1,7 +1,7 @@
 class Share
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
   	field :share_name,					type: String
   	field :share_caption,				type: String

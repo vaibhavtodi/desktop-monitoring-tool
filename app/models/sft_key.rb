@@ -1,7 +1,7 @@
 class SftKey
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
 	field :key_name,		    type: String
 	field :key_text,		    type: String

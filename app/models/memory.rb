@@ -1,7 +1,7 @@
 class Memory
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
    	field :bank,					      type: String
   	field :type,					      type: String

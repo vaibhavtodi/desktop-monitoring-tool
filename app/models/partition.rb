@@ -1,7 +1,7 @@
 class Partition
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
   	field :hard_drive_index,				  	type: String
   	field :partition_mount_type,				type: String

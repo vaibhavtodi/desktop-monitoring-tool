@@ -1,7 +1,7 @@
 class Ipadd
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
   	field :net_mac_address,						type: String
   	field :net_index,							type: String

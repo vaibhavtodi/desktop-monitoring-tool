@@ -1,7 +1,7 @@
 class ScsiCntrl
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
   
   	field :name,						type: String
   	field :manufacturer,				type: String

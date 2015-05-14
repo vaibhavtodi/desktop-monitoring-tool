@@ -1,34 +1,33 @@
-class Sys
-
+class SysTem
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Versioning
   include Mongoid::History::Tracker
   
-  field :timestamp,						        type: String
-	field :uuid,							          type: String
+  	field :timestamp,						        type: String
+	field :uuid,							        type: String
 	field :hostname,						        type: String
-	field :man_ip_address,			        type: String
+	field :man_ip_address,			        		type: String
 	field :domain,							        type: String
-	field :description,					        type: String
-	field :type,							          type: String
-  field :icon,                        type: String
-  field :os_icon,                     type: String
+	field :description,					        	type: String
+	field :type,							        type: String
+  	field :icon,                        			type: String
+  	field :os_icon,                     			type: String
 	field :os_group,						        type: String
 	field :os_family,						        type: String
 	field :os_name,							        type: String
-	field :os_version,					        type: String
+	field :os_version,					        	type: String
 	field :serial,							        type: String
-	field :model,							          type: String
-	field :manufacturer,				        type: String
+	field :model,							        type: String
+	field :manufacturer,				        	type: String
 	field :uptime,							        type: String
-	field :form_factor,					        type: String
+	field :form_factor,					        	type: String
 	field :pc_os_bit,						        type: String
 	field :pc_memory,						        type: String
-	field :pc_num_processor,				    type: String
-	field :pc_date_os_installation,			type: String
-  field :man_org_id,                  type: String
-  field :system_id,                   type: String
+	field :pc_num_processor,				    	type: String
+	field :pc_date_os_installation,					type: String
+  	field :man_org_id,                  			type: String
+  	field :system_id,                   			type: String
 
  
   embeds_many :logs,                                 cascade_callbacks: true
@@ -40,7 +39,7 @@ class Sys
 
 
   #hardware
-  embeds_many :bios,                                 cascade_callbacks: true
+  embeds_many :bios,		  store_as: "bios",      cascade_callbacks: true
   embeds_many :hard_disks,                           cascade_callbacks: true
   embeds_many :memorys,                              cascade_callbacks: true
   embeds_many :mntrs,         store_as: "monitors",  cascade_callbacks: true
@@ -62,6 +61,6 @@ class Sys
   embeds_many :services,                             cascade_callbacks: true
   embeds_many :sft_keys,  store_as: "software_keys", cascade_callbacks: true
   
-  index({hostname: 1, man_ip_address: 1, net_mac_address: 1}, {unique: true})
+  #index({hostname: 1, man_ip_address: 1, net_mac_address: 1}, {unique: true})
 
 end

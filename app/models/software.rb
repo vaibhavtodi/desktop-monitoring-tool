@@ -1,7 +1,7 @@
 class Software
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
 	field :software_name,				    	type: String
 	field :software_version,				    type: String

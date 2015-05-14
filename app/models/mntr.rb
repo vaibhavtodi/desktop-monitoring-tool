@@ -1,7 +1,7 @@
 class Mntr
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
   
   	field :manufacturer,					  type: String
   	field :device_id,						    type: String

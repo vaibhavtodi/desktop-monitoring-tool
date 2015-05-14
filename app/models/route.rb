@@ -1,7 +1,7 @@
 class Route
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
 	field :destination,		    type: String
 	field :mask,			    type: String

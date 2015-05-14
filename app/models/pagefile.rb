@@ -1,7 +1,7 @@
 class Pagefile
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
   	field :file_name,					type: String
   	field :initial_size,				type: String

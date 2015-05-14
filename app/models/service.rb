@@ -1,7 +1,7 @@
 class Service
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
 	field :service_description,			    type: String
 	field :service_display_name,		    type: String

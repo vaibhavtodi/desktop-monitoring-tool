@@ -1,7 +1,7 @@
 class NetworkCard
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
    	field :net_index,                     type: Integer
     field :net_mac_address,				  	    type: String

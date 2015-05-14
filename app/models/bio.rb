@@ -1,7 +1,7 @@
 class Bio
   include Mongoid::Document
 
-  embedded_in :sys
+  embedded_in :sys_tem
 
   	field :bios_description,					type: String
   	field :bios_manufacturer,					type: String
