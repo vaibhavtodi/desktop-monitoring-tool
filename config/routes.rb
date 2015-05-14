@@ -26,8 +26,7 @@ Rails.application.routes.draw do
 
   # get 'sys/parse_win'
   # get 'sys/parse_lin'
-
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
