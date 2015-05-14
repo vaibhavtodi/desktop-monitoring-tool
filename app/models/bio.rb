@@ -1,4 +1,4 @@
-class Bios
+class Bio
   include Mongoid::Document
 
   embedded_in :sys
@@ -10,4 +10,3 @@ class Bios
   	field :bios_version,						type: String
   	field :bios_asset_tag,						type: String
 end
-
