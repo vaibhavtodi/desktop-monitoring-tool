@@ -1,5 +1,41 @@
 Rails.application.routes.draw do
 
+  get 'info/software'
+
+  get 'info/hardware'
+
+  get 'info/user'
+
+  get 'info/log'
+
+  get 'info/route'
+
+  get 'info/share'
+
+  get 'info/index'
+
+  get 'info/software'
+
+  get 'info/hardware'
+
+  get 'info/user'
+
+  get 'info/log'
+
+  get 'info/route'
+
+  get 'info/share'
+
+  get 'audit_info/index'
+
+  get 'audit_info/os'
+
+  get 'audit_info/system_log'
+
+  get 'audit_info/add_device'
+
+  get 'audit_info/discovery'
+
   root 'home#index'
 
   devise_for :users
