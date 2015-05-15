@@ -10,4 +10,10 @@ class AuditInfoController < ApplicationController
   def info
   end
 
+  def os
+  end
+
+  def system_log
+  end
+
 end

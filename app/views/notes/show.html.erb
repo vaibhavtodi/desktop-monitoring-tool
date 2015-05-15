@@ -1,39 +1,30 @@
-    
-    <br /><br />
-    
-    <div id="page-wrapper page-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                  <p id="notice">
-                    <%= notice %>
-                  </p>
+<div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+        <p id="notice">
+            <%= notice %>
+        </p>
 
-						<h1 class="page-header bg-warning">
-							Details
-						</h1>
+		<h1 class="page-header bg-warning">
+			Details
+		</h1>
 
-						<p id="notice"><%= notice %></p>
+		<p id="notice"><%= notice %></p>
 
-						<p>
-						  <strong>Title:</strong>
-						  <%= @note.title %>
-						</p>
+		<p>
+			<strong>Title:</strong>
+			<%= @note.title %>
+		</p>
 
-						<p>
-						  <strong>Text:</strong>
-						  <%= @note.text %>
-						</p>
+		<p>
+			<strong>Text:</strong>
+			<%= @note.text %>
+		</p>
 
-						<p>
-						  <strong>Starred:</strong>
-						  <%= @note.starred %>
-						</p>
+		<p>
+			<strong>Starred:</strong>
+			<%= @note.starred %>
+		</p>
 
-						<%= link_to 'Edit', edit_note_path(@note) %> |
-						<%= link_to 'Back', notes_path %>
-                </div>
-            </div>    
-        </div>
+		<%= link_to 'Edit', edit_note_path(@note) %> |   <%= link_to 'Back', notes_path %>
     </div>
 </div>

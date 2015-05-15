@@ -35,16 +35,18 @@
     <%= render 'layouts/header2' %>
   </div>
 
-<div id="wrapper">
+  <p><br /><br /></p>
+
+  <div id="wrapper">
     <div id="sidebar-wrapper" role="navigation">
         <ul class="sidebar-nav">
 
             <li>
-                <a class="sidebar-brand" href=""> Dashboard </a>
+                <a class="sidebar-brand" href="index"> Dashboard </a>
             </li>
 
             <li>
-                <a href="#"> OS Type's </a>
+                <a href="audit_info/os"> OS Type's </a>
             </li>    
             
             <li data-toggle="collapse" data-target="#discovery" class="collapsed active">
@@ -68,6 +70,10 @@
             <li>
                 <a href="audit_info/info"> Information </a>
             </li>
+
+            <li>
+                <a href="audit_info/system_log"> System Log </a>
+            </li>
             
             <li>
                 <%= link_to("Notes", notes_path) %>
@@ -76,6 +82,15 @@
         </ul>
     </div>
 
+    <p><br /><br /></p>
+   
+    <div id="page-wrapper page-content-wrapper">
+        <div class="container-fluid">
 
+          <%= yield %>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>
