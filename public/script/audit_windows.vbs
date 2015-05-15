@@ -46,7 +46,7 @@ submit_online = "y"
 create_file = "y"
 
 ' the address of the OAv2 server "submit" page
-url = "http://localhost/open-audit/index.php/system/add_system"
+url = "http://192.168.0.106:3000/recxml/rec_xml"
 
 ' submit via a proxy (using the settings of the user running the script)
 use_proxy = "n"

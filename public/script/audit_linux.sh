@@ -62,7 +62,7 @@ submit_online="y"
 create_file="y"
 
 # the address of the OAv2 server "submit" page
-url="http://localhost/open-audit/index.php/system/add_system"
+url="http://192.168.0.106:3000/recxml/rec_xml"
 
 # optional - assign any PCs audited to this Org - take the OrgId from OAv2 interface
 org_id=""

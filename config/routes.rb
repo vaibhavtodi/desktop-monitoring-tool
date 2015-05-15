@@ -21,11 +21,14 @@ Rails.application.routes.draw do
 
   # get 'audit_info/index'
   # get 'audit_info/info'
+  # get 'audit_info/os'
+  # get 'audit_info/system_log'
+  # get 'audit_info/'
   
   # get 'receive_xml/recxml'
 
-  # get 'sys/parse_win'
-  # get 'sys/parse_lin'
+  # get 'sys_tem/parse_win'
+  # get 'sys_tem/parse_lin'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

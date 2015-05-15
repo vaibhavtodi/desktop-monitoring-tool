@@ -45,5 +45,5 @@ class User
   
   # Relationship with notes
   has_many :notes, dependent: :delete, autosave: true
-
+  has_many :system_logs, dependent: :delete, autosave: true
 end

@@ -5,6 +5,7 @@ class AuditInfoController < ApplicationController
 	before_action :authenticate_user!
 
   def index
+    @sys = SysTem.all
   end
 
   def info
@@ -14,6 +15,7 @@ class AuditInfoController < ApplicationController
   end
 
   def system_log
+    @sys_log = SystemLog.all    
   end
 
 end

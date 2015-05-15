@@ -18,7 +18,6 @@ class RecxmlController < ApplicationController
     # Redirecting for converting XML to JSON
     #redirect_to :action => 'convert_to_json'
   end
-
   
 
   def convert_to_json
@@ -33,30 +32,40 @@ class RecxmlController < ApplicationController
   end
     
 
-
+  # Checks for OS detail & along side saves the System_log details
   def check_os
     # Open the XML file for parsing
     f = File.open("tmp/xml_files/a.xml", "r")
       doc = Nokogiri::XML(f)
     f.close
 
+    # Variable that holds the name of the OS
     str = ""
+    
+    # Hash that stores key value pair for System Log
+    sys = Hash.new
+
     doc.xpath('//sys').children.each do |node|
-      if !node.blank? then
-        #puts "#{node.name}  ::  #{node.content}"
+      if !node.content.blank? then
+        
         if node.matches? ('os_group') then
           str = node.content
         end
+
+        if node.matches?('form_factor') || node.matches?('hostname') || node.matches?('os_name') ||  node.matches?('os_version') || node.matches?('serial') || node.matches?('model') || node.matches?('timestamp') then
+          sys[node.name] = node.content
+        end
       end
     end
-    puts "OS_group  ::::  #{str}"
 
-    # Check for OS_Name and then direct it to the proper action
+    # Saving the (System_log) values to the Database
+    s = SystemLog.new(sys)
+    s.save
+
+    # Check for OS_Name and then direct it to the proper action for data extraction
     if str.eql? ("Windows") then
-      puts "!!!!!!!!!!!! REDIRECTING TO WINDOWS PARSER !!!!!!!!!!!!"
       redirect_to :controller => 'sys_tem', :action => 'parse_win'
     else
-      puts "!!!!!!!!!!!! REDIRECTING TO LINUX PARSER !!!!!!!!!!!!"
       redirect_to :controller => 'sys_tem', :action => 'parse_lin'
     end
   end
