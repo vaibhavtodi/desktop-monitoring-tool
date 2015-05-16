@@ -1,8 +1,6 @@
 class Mntr
   include Mongoid::Document
 
-  embedded_in :sys_tem
-  
   	field :manufacturer,					  type: String
   	field :device_id,						    type: String
 	  field :manufacture_date,				type: String
@@ -11,4 +9,6 @@ class Mntr
   	field :edid_version,					  type: String
   	field :aspect_ratio,					  type: String
   	field :size,							      type: Float
+
+    embedded_in :sys_tem,   :inverse_of => :mntrs
 end

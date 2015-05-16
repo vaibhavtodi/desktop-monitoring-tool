@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#users_detail">
+                <span class="text-primary">
+                    Users 
+                </span>
+            </a> 
+        </h4>
+    </div>
+                        
+    <div id="users_detail" class="panel-collapse collapse">
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Full Name</th>
+                        <th>Caption</th>
+                        <th>SID</th>
+                        <th>Domain</th>
+                        <th>Disabled</th>
+                        <th>Status</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <% @us.each do |u| %>
+                        <tr>
+                            <td><%= u.user_name %></td>
+                            <td><%= u.user_full_name %></td>
+                            <td><%= u.user_caption %></td>
+                            <td><%= u.user_sid %></td>
+                            <td><%= u.user_domain %></td>
+                            <td><%= u.user_disabled %></td>
+                            <td><%= u.user_status %></td>
+                            <td><%= u.user_type %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

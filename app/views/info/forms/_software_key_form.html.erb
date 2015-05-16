@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#sftkey_detail">
+                <span class="text-success">
+                    Software Keys 
+                </span>
+            </a>        
+        </h4>
+    </div>
+                        
+    <div id="sftkey_detail" class="panel-collapse collapse">
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Text</th>
+                        <th>Release</th>
+                        <th>Edition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @sft_ky.each do |s| %>    
+                        <tr>
+                            <td><%= s.key_name %></td>
+                            <td><%= s.key_text %></td>
+                            <td><%= s.key_release %></td>
+                            <td><%= s.key_edition %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

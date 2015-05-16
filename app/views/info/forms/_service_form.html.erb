@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#service_detail">
+                <span class="text-warning">
+                    Services 
+                </span>
+            </a> 
+        </h4>
+    </div>
+                        
+    <div id="service_detail" class="panel-collapse collapse">
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Display Name</th>
+                        <th>Description</th>
+                        <th>Path</th>
+                        <th>Started</th>
+                        <th>Start Name</th>
+                        <th>State Mode</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <% @sv.each do |s| %>    
+                        <tr>
+                            <td><%= s.service_name %></td>
+                            <td><%= s.service_display_name %></td>
+                            <td><%= s.service_description %></td>
+                            <td><%= s.service_path_name %></td>
+                            <td><%= s.service_started %></td>
+                            <td><%= s.service_start_name %></td>
+                            <td><%= s.service_start_mode %></td>
+                            <td><%= s.service_state %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

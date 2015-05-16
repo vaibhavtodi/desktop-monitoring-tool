@@ -1,8 +1,6 @@
 class Window
   include Mongoid::Document
 
-  embedded_in :sys_tem
-
   	field :windows_build_number,			        type: String
   	field :windows_user_name,				          type: String
   	field :windows_workgroup,					        type: String
@@ -21,4 +19,6 @@ class Window
   	field :windows_service_pack,			  	    type: String
 	  field :windows_version,					          type: String
 	  field :windows_install_directory,		      type: String
+
+    embedded_in :sys_tem,   :inverse_of => :windows
 end

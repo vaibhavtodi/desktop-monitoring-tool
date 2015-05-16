@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#shares_detail">
+                <span class="text-warning">
+                    Shares 
+                </span>
+            </a>        
+        </h4>
+    </div>
+                        
+    <div id="shares_detail" class="panel-collapse collapse">
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Caption</th>
+                        <th>Path</th>
+                        <th>Size</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <% @sh.each do |a| %>                    
+                        <tr>
+                            <td><%= a.share_name %></td>
+                            <td><%= a.share_caption %></td>
+                            <td><%= a.share_path %></td>
+                            <td><%= a.share_size %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

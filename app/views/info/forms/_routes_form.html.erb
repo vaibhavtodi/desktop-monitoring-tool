@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#routes_detail">
+                <span class="text-primary">
+                    Routes 
+                </span>
+            </a>
+        </h4>
+    </div>
+                        
+    <div id="routes_detail" class="panel-collapse collapse">
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Destination</th>
+                        <th>Mask</th>
+                        <th>Metric</th>
+                        <th>Next Hop</th>
+                        <th>Protocol</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <% @rt.each do |r| %>
+                        <tr>
+                            <td><%= r.destination %></td>
+                            <td><%= r.mask %></td>
+                            <td><%= r.metric %></td>
+                            <td><%= r.next_hop %></td>
+                            <td><%= r.protocol %></td>
+                            <td><%= r.type %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    

@@ -1,8 +1,6 @@
 class Processor
   include Mongoid::Document
 
-  embedded_in :sys_tem
-
   	field :processor_count,						            type: Integer
   	field :processor_cores,						            type: Integer
   	field :processor_logical,					  	        type: Integer
@@ -12,4 +10,6 @@ class Processor
   	field :processor_manufacturer,					      type: String
   	field :processor_architecture,					      type: String
   	field :processor_power_management_supported,	type: Boolean
+
+    embedded_in :sys_tem,   :inverse_of => :processors
 end

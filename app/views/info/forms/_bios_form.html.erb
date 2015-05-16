@@ -1,0 +1,50 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#bios_detail">
+                <span class="text-primary">
+                    Bios 
+                </span>
+            </a>        
+        </h4>
+    </div>
+                        
+    <div id="bios_detail" class="panel-collapse collapse">
+        <div class="panel-body">
+    
+
+            <%= form_for @bs, url: {action: "hardware"} do |b| %>
+            <!--  Form for Bios  -->
+                <div class="form-group col-sm-4">
+                    <%= label_tag :Description %>    
+                    <%= b.text_field :bios_description, disabled: true %>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <%= label_tag :Manufacturer %>
+                    <%= b.text_field :bios_manufacturer, disabled: true %>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <%= label_tag :Serial %>
+                    <%= b.text_field :bios_serial, disabled: true %>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <%= label_tag :Version %>
+                    <%= b.text_field :bios_version, disabled: true %>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <%= label_tag :"SM Version" %>
+                    <%= b.text_field :bios_smversion, disabled: true %>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <%= label_tag :"Asset Tag" %>
+                    <%= b.text_field :bios_asset_tag, disabled: true %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

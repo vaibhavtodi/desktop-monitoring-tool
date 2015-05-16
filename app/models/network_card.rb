@@ -1,8 +1,6 @@
 class NetworkCard
   include Mongoid::Document
 
-  embedded_in :sys_tem
-
    	field :net_index,                     type: Integer
     field :net_mac_address,				  	    type: String
   	field :net_manufacturer,				      type: String
@@ -24,4 +22,6 @@ class NetworkCard
     field :net_wins_primary,				      type: String
 	  field :net_wins_secondary,				    type: String
 	  field :net_wins_lmhosts_enabled,		  type: Boolean
+
+    embedded_in :sys_tem,   :inverse_of => :network_cards
 end

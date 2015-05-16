@@ -60,6 +60,6 @@ class SysTem
   embeds_many :services,                             cascade_callbacks: true
   embeds_many :sft_keys,  store_as: "software_keys", cascade_callbacks: true
   
-  index({hostname: 1, man_ip_address: 1, net_mac_address: 1}, {unique: true})
+  index({os_group: 1, hostname: 1, serial: 1, model: 1, man_ip_address: 1, net_mac_address: 1}, {unique: true})
 
 end

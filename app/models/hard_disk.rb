@@ -1,7 +1,5 @@
 class HardDisk
   include Mongoid::Document
-
-  embedded_in :sys_tem
   
   	field :hard_drive_caption,					type: String
 	field :hard_drive_index,					type: String
@@ -16,4 +14,6 @@ class HardDisk
 	field :hard_drive_firmware,					type: String
 	field :hard_drive_model_family,				type: String
 	field :hard_drive_scsi_logical_unit,		type: String
+
+	embedded_in :sys_tem,  	:inverse_of => :hard_disks
 end

@@ -1,8 +1,6 @@
 class Software
   include Mongoid::Document
 
-  embedded_in :sys_tem
-
 	field :software_name,				    	type: String
 	field :software_version,				    type: String
 	field :software_location,			    	type: String
@@ -16,4 +14,6 @@ class Software
 	field :software_comment,			    	type: String
 	field :software_code_base,			    	type: String
 	field :software_status,				    	type: String
+
+	embedded_in :sys_tem,  	:inverse_of => :softwares
 end

@@ -6,6 +6,16 @@ Rails.application.routes.draw do
 
   get 'info/user'
 
+  get 'info/lgrs'
+
+  get 'info/index'
+
+  get 'info/software'
+
+  get 'info/hardware'
+
+  get 'info/user'
+
   get 'info/log'
 
   get 'info/route'

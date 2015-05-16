@@ -29,7 +29,10 @@
                                 <tr>
                                     <td> --                      </td>
                                     <td><%= sy.form_factor %>    </td>
-                                    <td><%= sy.hostname %>       </td>
+
+                                <td><%= link_to sy.hostname, {:controller => "info", :action => "index", :hn => sy.hostname, :os =>sy.os_family } %></td>
+                                
+                                    
                                     <td><%= sy.os_name %>        </td>
                                     <td><%= sy.os_version %>     </td>
                                     <td><%= sy.man_ip_address %> </td>

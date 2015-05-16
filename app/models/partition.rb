@@ -1,8 +1,6 @@
 class Partition
   include Mongoid::Document
 
-  embedded_in :sys_tem
-
   	field :hard_drive_index,				  	type: String
   	field :partition_mount_type,				type: String
   	field :partition_mount_point,				type: String
@@ -19,4 +17,6 @@ class Partition
   	field :partition_quotas_supported,	type: String
   	field :partition_quotas_enabled,		type: String
   	field :partition_serial,					  type: String
+
+    embedded_in :sys_tem,   :inverse_of => :partitions
 end

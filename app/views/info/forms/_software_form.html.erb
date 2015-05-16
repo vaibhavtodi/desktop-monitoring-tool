@@ -1,0 +1,54 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#software_detail">
+                <span class="text-primary">
+                    Softwares 
+                </span>
+            </a>        
+        </h4>
+    </div>
+                        
+    <div id="software_detail" class="panel-collapse collapse">
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Version</th>
+                        <th>Location</th>
+                        <th>Install Date</th>
+                        <th>Uninstall</th>
+                        <th>Publisher</th>
+                        <th>Install Source</th>
+                        <th>System Component</th>
+                        <th>URL</th>
+                        <th>Email</th>
+                        <th>Comment</th>
+                        <th>Code Base</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @sft.each do |s| %>    
+                        <tr>
+                            <td><%= s.software_name %></td>
+                            <td><%= s.software_version %></td>
+                            <td><%= s.software_location %></td>
+                            <td><%= s.software_install_date %></td>
+                            <td><%= s.software_uninstall %></td>
+                            <td><%= s.software_publisher %></td>
+                            <td><%= s.software_install_source %></td>
+                            <td><%= s.software_system_component %></td>
+                            <td><%= s.software_url %></td>
+                            <td><%= s.software_email %></td>
+                            <td><%= s.software_comment %></td>
+                            <td><%= s.software_code_base %></td>
+                            <td><%= s.software_status %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

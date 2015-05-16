@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#log_detail">
+                <span class="text-success">
+                    Logs 
+                </span>
+            </a>
+        </h4>
+    </div>
+                        
+    <div id="log_detail" class="panel-collapse collapse">
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>File Name</th>
+                        <th>File Size</th>
+                        <th>Max File Size</th>
+                        <th>Overwrite</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <% @lg.each do |s| %>                    
+                        <tr>
+                            <td><%= s.log_name %></td>
+                            <td><%= s.log_file_name %></td>
+                            <td><%= s.log_file_size %></td>
+                            <td><%= s.log_max_file_size %></td>
+                            <td><%= s.log_overwrite %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
