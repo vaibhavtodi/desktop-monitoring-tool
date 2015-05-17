@@ -1,25 +1,108 @@
 <br /><br />
 
+<!-- Common for both Windows & Linux Machine -->
 <div class="container">
 	<div class="row">
 		<div class="col-lg-10">
 	        <%= render 'info/forms/bios_form' %>
 		</div>
 	</div>
-</div>
 
-<div class="container">
+	<div class="row">
+		<div class="col-lg-10">
+	        <%= render 'info/forms/processor_form' %>
+		</div>
+	</div>
+
 	<div class="row">
 		<div class="col-lg-10">
 	        <%= render 'info/forms/hard_disk_form' %>
 		</div>
 	</div>
-</div>
 
-<div class="container">
 	<div class="row">
 		<div class="col-lg-10">
-	        <%= render 'info/forms/memory_form' %>
+	        <%= render 'info/forms/partition_form' %>
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="col-lg-10">
+	        <%= render 'info/forms/network_card_form' %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-10">
+	        <%= render 'info/forms/video_card_form' %>
+	    </div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-10">
+	        <%= render 'info/forms/sound_card_form' %>
+		</div>
+	</div>
+
 </div>
+
+
+<% if $sys.os_group == "Windows" then %>
+	<!-- Present only in a Windows Machine -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10">
+		        <%= render 'info/forms/mother_board_form' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-10">
+		        <%= render 'info/forms/memory_form' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-10">
+		        <%= render 'info/forms/optical_drive_form' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-10">
+		        <%= render 'info/forms/scsi_controller_form' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-10">
+		        <%= render 'info/forms/modem_form' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-10">
+		        <%= render 'info/forms/monitor_form' %>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+
+<% if $sys.os_group == "Linux" then %>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10">
+		        <%= render 'info/forms/pagefile_form' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-10">
+		        <%= render 'info/forms/ip_address_form' %>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+

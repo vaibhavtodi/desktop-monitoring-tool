@@ -1,45 +1,41 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            Modem 
+            <a data-toggle="collapse" data-parent="#accordion" href="#modem_detail">
+                <span class="text-success">
+                    Modem
+                </span>
+            </a>
         </h4>
     </div>
-                        
     <div id="modem_detail" class="panel-collapse collapse">
-        <div class="panel-body bg-primary">
-
-            <!--  Form for Modem  -->
-            <form class="form-inline" role="form">
-                <div class="form-group col-sm-4">
-                    <label for="port">Port :-</label>
-                    <label for="port">  </label>
+        <div class="panel-body">
+        <% @modm.each do |md| %>
+            <%= form_for md, url: {action: "hardware"} do |b| %>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Port" %>    
+                        <%= b.text_field :port, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Model" %>    
+                        <%= b.text_field :model, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Device ID" %>    
+                        <%= b.text_field :device_id, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Type" %>    
+                        <%= b.text_field :type, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Manufacturer" %>    
+                        <%= b.text_field :manufacturer, disabled: true %>
+                    </div>
                 </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="model">Model :-</label>
-                    <label for="model">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="country">Country :-</label>
-                    <label for="country">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="device_id">Device ID :-</label>
-                    <label for="device_id">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="type">Type :-</label>
-                    <label for="type">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="manufacturer">Manufacturer :-</label>
-                    <label for="manufacturer">  </label>
-                </div>
-            </form>
+            <% end %>
+        <% end %>
         </div>
     </div>
 </div>

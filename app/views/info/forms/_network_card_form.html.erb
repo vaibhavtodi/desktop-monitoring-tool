@@ -1,120 +1,106 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            Network Card 
+            <a data-toggle="collapse" data-parent="#accordion" href="#network_detail">
+                <span class="text-primary">
+                    Network Cards
+                </span>
+            </a>
         </h4>
     </div>
                         
     <div id="network_detail" class="panel-collapse collapse">
-        <div class="panel-body bg-primary">
-
-            <!--  Form for Network Card  -->
-            <form class="form-inline" role="form">
-                <div class="form-group col-sm-4">
-                    <label for="net_mac_address">MAC Address :-</label>
-                    <label for="net_mac_address">  </label>
+        <div class="panel-body">
+        <% @ncard.each do |nc| %>
+            <%= form_for nc, url: {action: "hardware"} do |b| %>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Index %>    
+                        <%= b.text_field :net_index, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"MAC Address" %>    
+                        <%= b.text_field :net_mac_address, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Manufacturer %>    
+                        <%= b.text_field :net_manufacturer, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Model %>    
+                        <%= b.text_field :net_model, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Description %>    
+                        <%= b.text_field :net_description, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"IP Enabled" %>    
+                        <%= b.text_field :net_ip_enabled, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Connection ID" %>    
+                        <%= b.text_field :net_connection_id, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Connection Status" %>    
+                        <%= b.text_field :net_connection_status, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Speed" %>    
+                        <%= b.text_field :net_speed, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Adapter Type" %>    
+                        <%= b.text_field :net_adapter_type, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"DHCP Enabled" %>    
+                        <%= b.text_field :net_dhcp_enabled, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"DHCP Server" %>    
+                        <%= b.text_field :net_dhcp_server, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"DHCP Lease Obtained" %>    
+                        <%= b.text_field :net_dhcp_lease_obtained, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"DHCP Lease Expires" %>    
+                        <%= b.text_field :net_dhcp_lease_expires, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"DNS Hostname" %>    
+                        <%= b.text_field :net_dns_host_name, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"DNS Domain" %>    
+                        <%= b.text_field :net_dns_domain, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"DNS Domain Reg Enabled" %>    
+                        <%= b.text_field :net_dns_domain_reg_enabled, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"DNS Server" %>    
+                        <%= b.text_field :net_dns_server, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Wins Primary" %>    
+                        <%= b.text_field :net_wins_primary, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Wins Secondary" %>    
+                        <%= b.text_field :net_wins_secondary, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Wins LM-Host Enabled" %>    
+                        <%= b.text_field :net_wins_lmhosts_enabled, disabled: true %>
+                    </div>
                 </div>
-                                          
-                <div class="form-group col-sm-4">
-                    <label for="net_manufacturer">Manufacturer :-</label>
-                    <label for="net_manufacturer">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_model">Model :-</label>
-                    <label for="net_model">  </label>
-                </div>
-                                          
-                <div class="form-group col-sm-4">
-                    <label for="net_description">Description :-</label>
-                    <label for="net_description">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_ip_enabled">IP Enabled :-</label>
-                    <label for="net_ip_enabled">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_index">Index :-</label>
-                    <label for="net_index">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_connection_id">Connection ID :-</label>
-                    <label for="net_connection_id">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_connection_status">Connection Status :-</label>
-                    <label for="net_connection_status">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_speed">Speed :-</label>
-                    <label for="net_speed">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_adapter_type">Adapter Type :-</label>
-                    <label for="net_adapter_type">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_dhcp_enabled">DHCP Enabled :-</label>
-                    <label for="net_dhcp_enabled">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_dhcp_server">DHCP Server :-</label>
-                    <label for="net_dhcp_server">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_dhcp_lease_obtained">DHCP Lease Obtained :-</label>
-                    <label for="net_dhcp_lease_obtained">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_dhcp_lease_expires">DHCP Lease Expires :-</label>
-                    <label for="net_dhcp_lease_expires">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_dns_host_name">DNS Host Name :-</label>
-                    <label for="net_dns_host_name">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_dns_domain">DNS Domain :-</label>
-                    <label for="net_dns_domain">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_dns_domain_reg_enabled">DNS Domain Reg Enabled:-</label>
-                    <label for="net_dns_domain_reg_enabled">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_dns_Server">DNS Server :-</label>
-                    <label for="net_dns_Server">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_wins_primary">Wins Primary :-</label>
-                    <label for="net_wins_primary">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_wins_secondary">Wins Secondary :-</label>
-                    <label for="net_wins_secondary">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="net_wins_lmhosts_enabled">Wins LmHost Enabled :-</label>
-                    <label for="net_wins_lmhosts_enabled">  </label>
-                </div>
-            </form>
+            <% end %>
+        <% end %>
         </div>
     </div>
 </div>

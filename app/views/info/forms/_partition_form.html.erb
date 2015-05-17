@@ -1,95 +1,86 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            Partition 
+            <a data-toggle="collapse" data-parent="#accordion" href="#partition_detail">
+                <span class="text-warning">
+                    Partition's
+                </span>
+            </a>
         </h4>
     </div>
                         
     <div id="partition_detail" class="panel-collapse collapse">
-        <div class="panel-body bg-primary">
-
-            <!--  Form for Partition  -->
-            <form class="form-inline" role="form">
-                <div class="form-group col-sm-4">
-                    <label for="hard_drive_index">Drive Index :-</label>
-                    <label for="hard_drive_index">  </label>
+        <div class="panel-body">
+        <% @part.each do |prt| %>
+            <%= form_for prt, url: {action: "hardware"} do |b| %>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"HDrv Index" %>    
+                        <%= b.text_field :hard_drive_index, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Mount Type" %>    
+                        <%= b.text_field :partition_mount_type, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Mount Point" %>    
+                        <%= b.text_field :partition_mount_point, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Name" %>    
+                        <%= b.text_field :partition_name, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Size" %>    
+                        <%= b.text_field :partition_size, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Free Space" %>    
+                        <%= b.text_field :partition_free_space, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Used Space" %>    
+                        <%= b.text_field :partition_used_space, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Format" %>    
+                        <%= b.text_field :partition_format, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Caption" %>    
+                        <%= b.text_field :partition_caption, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Device ID" %>    
+                        <%= b.text_field :partition_device_id, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Disk Index" %>    
+                        <%= b.text_field :partition_disk_index, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Bootable" %>    
+                        <%= b.text_field :partition_bootable, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Type" %>    
+                        <%= b.text_field :partition_type, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Quotas Supported" %>    
+                        <%= b.text_field :partition_quotas_supported, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Quotas Enabled" %>    
+                        <%= b.text_field :partition_quotas_enabled, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Serial" %>    
+                        <%= b.text_field :partition_serial, disabled: true %>
+                    </div>
                 </div>
-                                          
-                <div class="form-group col-sm-4">
-                    <label for="partition_mount_type">Partition Mount Type :-</label>
-                    <label for="partition_mount_type">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_mount_point">Partition Mount Point :-</label>
-                    <label for="partition_mount_point">  </label>
-                </div>
-                                          
-                <div class="form-group col-sm-4">
-                    <label for="partition_name">Name :-</label>
-                    <label for="partition_name">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_size">Size :-</label>
-                    <label for="partition_size">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_free_space">Free Space :-</label>
-                    <label for="partition_free_space">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_used_space">Used Space :-</label>
-                    <label for="partition_used_space">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_format">Format :-</label>
-                    <label for="partition_format">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_caption">Caption :-</label>
-                    <label for="partition_caption">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_device_id">Device ID :-</label>
-                    <label for="partition_device_id">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_disk_index">Disk Index :-</label>
-                    <label for="partition_disk_index">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_bootable">Bootable :-</label>
-                    <label for="partition_bootable">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_type">Type :-</label>
-                    <label for="partition_type">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_quotas_supported">Quotas Supported :-</label>
-                    <label for="partition_quotas_supported">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_quotas_enabled">Quotas Enabled :-</label>
-                    <label for="partition_quotas_enabled">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="partition_serial">Serial :-</label>
-                    <label for="partition_serial">  </label>
-                </div>
-            </form>
+            <% end %>
+        <% end %>
         </div>
     </div>
 </div>

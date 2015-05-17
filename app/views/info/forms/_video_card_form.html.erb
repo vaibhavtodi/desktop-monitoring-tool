@@ -1,30 +1,33 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            Video Card 
+            <a data-toggle="collapse" data-parent="#accordion" href="#video_detail">
+                <span class="text-warning">
+                    Video Card
+                </span>
+            </a>
         </h4>
     </div>
-                        
     <div id="video_detail" class="panel-collapse collapse">
-        <div class="panel-body bg-primary">
-
-            <!--  Form for Video  -->
-            <form class="form-inline" role="form">
-                <div class="form-group col-sm-4">
-                    <label for="video_description">Description :-</label>
-                    <label for="video_description">  </label>
+        <div class="panel-body">
+        <% @vcard.each do |vc| %>
+            <%= form_for vc, url: {action: "hardware"} do |b| %>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Description" %>    
+                        <%= b.text_field :video_description, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Manufacturer" %>    
+                        <%= b.text_field :video_manufacturer, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Memory" %>    
+                        <%= b.text_field :video_memory, disabled: true %>
+                    </div>
                 </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="video_manufacturer">Manufacturer :-</label>
-                    <label for="video_manufacturer">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="video_memory">Memory :-</label>
-                    <label for="video_memory">  </label>
-                </div>
-            </form>
+            <% end %>
+        <% end %>
         </div>
     </div>
-</divs>
+</div>

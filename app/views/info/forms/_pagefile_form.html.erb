@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#pagefile_detail">
+                <span class="text-primary">
+                    Pagefile 
+                </span>
+            </a>        
+        </h4>
+    </div>
+    <div id="pagefile_detail" class="panel-collapse collapse">
+        <div class="panel-body">
+            <%= form_for @pf, url: {action: "hardware"} do |b| %>
+                <div class="form-group col-sm-4">
+                    <%= label_tag :"File Name" %>    
+                    <%= b.text_field :file_name, disabled: true %>
+                </div>
+                <div class="form-group col-sm-4">
+                    <%= label_tag :"Size" %>    
+                    <%= b.text_field :initial_size, disabled: true %>
+                </div>
+                <div class="form-group col-sm-4">
+                    <%= label_tag :"Max Size" %>    
+                    <%= b.text_field :max_size, disabled: true %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

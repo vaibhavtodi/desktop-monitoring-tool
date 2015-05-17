@@ -11,48 +11,51 @@
                         
     <div id="mem_detail" class="panel-collapse collapse">
         <div class="panel-body">
-            <%= form_for @mem, url: {action: "hardware"} do |b| %>
-                
-                <div class="form-group col-sm-4">
-                    <%= label_tag :Bank %>    
-                    <%= b.text_field :bank, disabled: true %>
-                </div>
+        <% @mem.each do |me| %>
+            <%= form_for me, url: {action: "hardware"} do |b| %>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Bank %>    
+                        <%= b.text_field :bank, disabled: true %>
+                    </div>
 
-                <div class="form-group col-sm-4">
-                    <%= label_tag :Type %>    
-                    <%= b.text_field :type, disabled: true %>
-                </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Type %>    
+                        <%= b.text_field :type, disabled: true %>
+                    </div>
 
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Form Factor" %>    
-                    <%= b.text_field :form_factor, disabled: true %>
-                </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Form Factor" %>    
+                        <%= b.text_field :form_factor, disabled: true %>
+                    </div>
 
-                <div class="form-group col-sm-4">
-                    <%= label_tag :Detail %>    
-                    <%= b.text_field :detail, disabled: true %>
-                </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Detail %>    
+                        <%= b.text_field :detail, disabled: true %>
+                    </div>
 
-                <div class="form-group col-sm-4">
-                    <%= label_tag :Capacity %>    
-                    <%= b.text_field :capacity, disabled: true %>
-                </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Capacity %>    
+                        <%= b.text_field :capacity, disabled: true %>
+                    </div>
 
-                <div class="form-group col-sm-4">
-                    <%= label_tag :Speed %>    
-                    <%= b.text_field :speed, disabled: true %>
-                </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Speed %>    
+                        <%= b.text_field :speed, disabled: true %>
+                    </div>
 
-                <div class="form-group col-sm-4">
-                    <%= label_tag :Tag %>    
-                    <%= b.text_field :tag, disabled: true %>
-                </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Tag %>    
+                        <%= b.text_field :tag, disabled: true %>
+                    </div>
 
-                <div class="form-group col-sm-4">
-                    <%= label_tag :Serial %>    
-                    <%= b.text_field :serial, disabled: true %>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Serial %>    
+                        <%= b.text_field :serial, disabled: true %>
+                    </div>
                 </div>
             <% end %>
+        <% end %>
         </div>
     </div>
 </div>

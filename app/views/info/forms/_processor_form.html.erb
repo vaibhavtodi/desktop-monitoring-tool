@@ -1,60 +1,58 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            Processor 
+            <a data-toggle="collapse" data-parent="#accordion" href="#processor_detail">
+                <span class="text-success">
+                    Processor
+                </span>
+            </a>
         </h4>
     </div>
                         
     <div id="processor_detail" class="panel-collapse collapse">
-        <div class="panel-body bg-primary">
-
-            <!--  Form for Processor  -->
-            <form class="form-inline" role="form">
-                <div class="form-group col-sm-4">
-                    <label for="processor_count">Count :-</label>
-                    <label for="processor_count">  </label>
+        <div class="panel-body">
+        <% @proc.each do |pr| %>
+            <%= form_for pr, url: {action: "hardware"} do |b| %>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Count %>    
+                        <%= b.text_field :processor_count, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Cores %>    
+                        <%= b.text_field :processor_cores, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Logical %>    
+                        <%= b.text_field :processor_logical, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Socket %>    
+                        <%= b.text_field :processor_socket, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Description %>    
+                        <%= b.text_field :processor_description, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Speed %>    
+                        <%= b.text_field :processor_speed, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Manufacturer %>    
+                        <%= b.text_field :processor_manufacturer, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :Architecture %>    
+                        <%= b.text_field :processor_architecture, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Power Mng Supported" %>    
+                        <%= b.text_field :processor_power_management_supported, disabled: true %>
+                    </div>
                 </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="processor_cores">Cores :-</label>
-                    <label for="processor_cores">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="processor_logical">Logical :-</label>
-                    <label for="processor_logical">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="processor_socket">Socket :-</label>
-                    <label for="processor_socket">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="processor_description">Description :-</label>
-                    <label for="processor_description">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="processor_speed">Speed :-</label>
-                    <label for="processor_speed">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="processor_manufacturer">Manufacturer :-</label>
-                    <label for="processor_manufacturer">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="processor_architecture">Architecture :-</label>
-                    <label for="processor_architecture">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="processor_power_management_supported">Power Management Supported :-</label>
-                    <label for="processor_power_management_supported">  </label>
-                </div>
-            </form>
+            <% end %>
+        <% end %>
         </div>
     </div>
 </div>

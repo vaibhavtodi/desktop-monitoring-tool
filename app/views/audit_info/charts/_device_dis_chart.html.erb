@@ -30,7 +30,7 @@
                                     <td> --                      </td>
                                     <td><%= sy.form_factor %>    </td>
 
-                                <td><%= link_to sy.hostname, {:controller => "info", :action => "index", :hn => sy.hostname, :os =>sy.os_family } %></td>
+                                <td><%= link_to sy.hostname, {:controller => "info", :action => "load_data", :hn => sy.hostname, :os =>sy.os_family } %></td>
                                 
                                     
                                     <td><%= sy.os_name %>        </td>

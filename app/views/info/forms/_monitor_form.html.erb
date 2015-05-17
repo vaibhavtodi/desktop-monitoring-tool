@@ -1,55 +1,54 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            Monitor 
+            <a data-toggle="collapse" data-parent="#accordion" href="#mntr_detail">
+                <span class="text-primary">
+                    Monitor
+                </span>
+            </a>
         </h4>
     </div>
                         
     <div id="mntr_detail" class="panel-collapse collapse">
-        <div class="panel-body bg-primary">
-
-            <!--  Form for Monitor  -->
-            <form class="form-inline" role="form">
-                <div class="form-group col-sm-4">
-                    <label for="manufacturer">Manufacturer :-</label>
-                    <label for="manufacturer">  </label>
+        <div class="panel-body">
+        <% @mnt.each do |m| %>
+            <%= form_for m, url: {action: "hardware"} do |b| %>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Manufacturer" %>    
+                        <%= b.text_field :manufacturer, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Device ID" %>    
+                        <%= b.text_field :device_id, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Manufacture Date" %>    
+                        <%= b.text_field :manufacture_date, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Model" %>    
+                        <%= b.text_field :model, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Serial" %>    
+                        <%= b.text_field :serial, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"EDID Version" %>    
+                        <%= b.text_field :edid_version, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Aspect Ratio" %>    
+                        <%= b.text_field :aspect_ratio, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Size" %>    
+                        <%= b.text_field :size, disabled: true %>
+                    </div>
                 </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="device_id">Device ID :-</label>
-                    <label for="device_id">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="manufacturer_date">Date of Manufacture :-</label>
-                    <label for="manufacturer_date">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="model">Model :-</label>
-                    <label for="model">  </label>
-                </div>
-                
-                <div class="form-group col-sm-4">
-                    <label for="serial">Serial :-</label>
-                    <label for="serial">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="edid_version">Version :-</label>
-                    <label for="edid_version">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="aspect_ratio">Aspect Ratio :-</label>
-                    <label for="aspect_ratio">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="size">Size :-</label>
-                    <label for="size">  </label>
-                </div>
-            </form>
+            <% end %>
+        <% end %>
         </div>
     </div>
 </div>

@@ -1,121 +1,90 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            Window's 
+            <a data-toggle="collapse" data-parent="#accordion" href="#windows_detail">
+                <span class="text-sucess">
+                    Window's 
+                </span>
+            </a>        
         </h4>
     </div>
                         
     <div id="windows_detail" class="panel-collapse collapse">
-        <div class="panel-body bg-primary">
-
-            <!--  Form for Windows  -->
-            <form class="form-inline" role="form">
-
+        <div class="panel-body">
+            <%= form_for @win, url: {action: "index"} do |b| %>
                 <div class="form-group col-sm-4">
-                    <label for="windows_build_number">Build No. :-</label>
-                    <label for="windows_build_number">  </label>
+                    <%= label_tag :"Build Number" %>    
+                    <%= b.text_field :windows_build_number, disabled: true %>
                 </div>
-                                          
                 <div class="form-group col-sm-4">
-                    <label for="windows_user_name">User Name :-</label>
-                    <label for="windows_user_name">  </label>
+                    <%= label_tag :"User Name" %>    
+                    <%= b.text_field :windows_user_name, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_client_site_name">Client Site Name :-</label>
-                    <label for="windows_client_site_name">  </label>
+                    <%= label_tag :"Workgroup" %>    
+                    <%= b.text_field :windows_workgroup, disabled: true %>
                 </div>
-                                          
                 <div class="form-group col-sm-4">
-                    <label for="windows_domain_short">Domain :-</label>
-                    <label for="windows_domain_short">  </label>
+                    <%= label_tag :"Domain Short" %>    
+                    <%= b.text_field :windows_domain_short, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_workgroup">Workgroup :-</label>
-                    <label for="windows_workgroup">  </label>
+                    <%= label_tag :"Domain Cntrl Add" %>    
+                    <%= b.text_field :windows_domain_controller_address, disabled: true %>
                 </div>
-                                          
                 <div class="form-group col-sm-4">
-                    <label for="windows_domain_controller_address">DC Address :-</label>
-                    <label for="windows_domain_controller_address">  </label>
+                    <%= label_tag :"Domain Cnrtl Name" %>    
+                    <%= b.text_field :windows_domain_controller_name, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_domain_controller_name">DC Name :-</label>
-                    <label for="windows_domain_controller_name">  </label>
+                    <%= label_tag :"Domain Role" %>    
+                    <%= b.text_field :windows_domain_role, disabled: true %>
                 </div>
-                                          
                 <div class="form-group col-sm-4">
-                    <label for="windows_domain_role">Domain Role :-</label>
-                    <label for="windows_domain_role">  </label>
+                    <%= label_tag :"Part of Domain" %>    
+                    <%= b.text_field :windows_part_of_domain, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_part_of_domain">Part of Domain :-</label>
-                    <label for="windows_part_of_domain">  </label>
+                    <%= label_tag :"ID Number" %>    
+                    <%= b.text_field :windows_id_number, disabled: true %>
                 </div>
-                                            
                 <div class="form-group col-sm-4">
-                    <label for="windows_id_number">ID No. :-</label>
-                    <label for="windows_id_number">  </label>
+                    <%= label_tag :"Time Caption" %>    
+                    <%= b.text_field :windows_time_caption, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_time_caption">Time Caption :-</label>
-                    <label for="windows_time_caption">  </label>
+                    <%= label_tag :"Time Daylight" %>    
+                    <%= b.text_field :windows_time_daylight, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_time_daylight">Time Daylight :-</label>
-                    <label for="windows_time_daylight">  </label>
+                    <%= label_tag :"Boot Device" %>    
+                    <%= b.text_field :windows_boot_device, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_boot_device">Bootable Device :-</label>
-                    <label for="windows_boot_device">  </label>
+                    <%= label_tag :"Country Code" %>    
+                    <%= b.text_field :windows_country_code, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_country_code">Country Code :-</label>
-                    <label for="windows_country_code">  </label>
+                    <%= label_tag :"Language" %>    
+                    <%= b.text_field :windows_language, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_organisation">Organization :-</label>
-                    <label for="windows_organisation">  </label>
+                    <%= label_tag :"Reg User" %>    
+                    <%= b.text_field :windows_registered_user, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_language">Language :-</label>
-                    <label for="windows_language">  </label>
+                    <%= label_tag :"Service Pack" %>    
+                    <%= b.text_field :windows_service_pack, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_registered_user">Registered User :-</label>
-                    <label for="windows_registered_user">  </label>
+                    <%= label_tag :"Version" %>    
+                    <%= b.text_field :windows_version, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="windows_service_pack">Service Pack :-</label>
-                    <label for="windows_service_pack">  </label>
+                    <%= label_tag :"Install Directory" %>    
+                    <%= b.text_field :windows_install_directory, disabled: true %>
                 </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="windows_version">Version :-</label>
-                    <label for="windows_version">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="windows_install_directory">Installed Directory :-</label>
-                    <label for="windows_install_directory">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="windows_active_directory">Active Directory :-</label>
-                    <label for="windows_active_directory">  </label>
-                </div>
-            </form>
+            <% end %>
         </div>
     </div>
 </div>

@@ -6,17 +6,7 @@
 	        <%= render 'info/forms/software_form' %>
 		</div>
 	</div>
-</div>
 
-<div class="container">
-	<div class="row">
-		<div class="col-lg-10">
-	        <%= render 'info/forms/software_key_form' %>
-		</div>
-	</div>
-</div>
-
-<div class="container">
 	<div class="row">
 		<div class="col-lg-10">
 	        <%= render 'info/forms/service_form' %>
@@ -24,3 +14,12 @@
 	</div>
 </div>
 
+<% if $sys.os_group == "Windows" then %>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10">
+		        <%= render 'info/forms/software_key_form' %>
+			</div>
+		</div>
+	</div>
+<% end %>

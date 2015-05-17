@@ -1,0 +1,46 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#ipadd_detail">
+                <span class="text-primary">
+                    IP Address 
+                </span>
+            </a>        
+        </h4>
+    </div>
+                        
+    <div id="ipadd_detail" class="panel-collapse collapse">
+        <div class="panel-body">
+        <% @ip_add.each do |ip| %>
+            <%= form_for ip, url: {action: "hardware"} do |b| %>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"MAC Address" %>    
+                        <%= b.text_field :net_mac_address, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Index" %>    
+                        <%= b.text_field :net_index, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"IP Address V4" %>    
+                        <%= b.text_field :ip_address_v4, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"IP Address V6" %>    
+                        <%= b.text_field :ip_address_v6, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"IP Subnet" %>    
+                        <%= b.text_field :ip_subnet, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"IP Address Version" %>    
+                        <%= b.text_field :ip_address_version, disabled: true %>
+                    </div>
+                </div>    
+            <% end %>
+        <% end %>    
+        </div>
+    </div>
+</div>

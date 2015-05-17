@@ -1,45 +1,41 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            Motherboard 
+            <a data-toggle="collapse" data-parent="#accordion" href="#mother_detail">
+                <span class="text-warning">
+                    Mother Board 
+                </span>
+            </a>        
         </h4>
     </div>
-                        
     <div id="mother_detail" class="panel-collapse collapse">
-        <div class="panel-body bg-primary">
-
-            <!--  Form for Motherboard  -->
-            <form class="form-inline" role="form">
+        <div class="panel-body">
+            <%= form_for @mthr_brd, url: {action: "hardware"} do |b| %>
                 <div class="form-group col-sm-4">
-                    <label for="manufacturer">Manufacturer :-</label>
-                    <label for="manufacturer">  </label>
+                    <%= label_tag :Manufacturer %>    
+                    <%= b.text_field :manufacturer, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="model">Model :-</label>
-                    <label for="model">  </label>
+                    <%= label_tag :Model %>    
+                    <%= b.text_field :model, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="serial">Serial :-</label>
-                    <label for="serial">  </label>
+                    <%= label_tag :Serial %>    
+                    <%= b.text_field :serial, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="processor_slot">Processor Slot :-</label>
-                    <label for="processor_slot">  </label>
+                    <%= label_tag :"Processor Slots" %>    
+                    <%= b.text_field :processor_slots, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="processor_type">Processor Type :-</label>
-                    <label for="processor_type">  </label>
+                    <%= label_tag :"Processor Type" %>    
+                    <%= b.text_field :processor_type, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="memory_slot">Memory Slot :-</label>
-                    <label for="memory_slot">  </label>
+                    <%= label_tag :"Memory Slots" %>    
+                    <%= b.text_field :memory_slots, disabled: true %>
                 </div>
-            </form>
+            <% end %>
         </div>
     </div>
 </div>

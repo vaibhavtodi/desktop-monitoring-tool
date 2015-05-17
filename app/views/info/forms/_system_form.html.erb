@@ -9,120 +9,93 @@
                         
     <div id="system_detail" class="panel-collapse collapse">
         <div class="panel-body">
-
-            <!--  Form for System  -->
-            <form class="form-inline" role="form">
-
+            <%= form_for $sys, url: {action: "index"} do |s| %>
+            <!--  Form for Bios  -->
                 <div class="form-group col-sm-4">
-                    <label for="timestamp">Timestamp :-</label>
-                    <label id="timestamp">  </label>
+                    <%= label_tag :"Scripted At" %>    
+                    <%= s.text_field :timestamp, disabled: true %>
                 </div>
-                                          
                 <div class="form-group col-sm-4">
-                    <label for="uuid">UUID :-</label>
-                    <label id="uuid">  </label>
+                    <%= label_tag :"UUID" %>    
+                    <%= s.text_field :uuid, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="hostname">Hostname :-</label>
-                    <label for="hostname">  </label>
+                    <%= label_tag :"IP Address" %>    
+                    <%= s.text_field :man_ip_address, disabled: true %>
                 </div>
-                                          
                 <div class="form-group col-sm-4">
-                    <label for="domain">Domain :-</label>
-                    <label for="domain">  </label>
+                    <%= label_tag :"Domain" %>    
+                    <%= s.text_field :domain, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="description">Description :-</label>
-                    <label for="description">  </label>
+                    <%= label_tag :"Description" %>    
+                    <%= s.text_field :description, disabled: true %>
                 </div>
-                                          
                 <div class="form-group col-sm-4">
-                    <label for="type">Type :-</label>
-                    <label for="type">  </label>
+                    <%= label_tag :"Type" %>    
+                    <%= s.text_field :type, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="icon">Icon :-</label>
-                    <label for="icon">  </label>
+                    <%= label_tag :"OS Group" %>    
+                    <%= s.text_field :os_group, disabled: true %>
                 </div>
-                                          
                 <div class="form-group col-sm-4">
-                    <label for="os-group">OS-Group :-</label>
-                    <label for="os-group">  </label>
+                    <%= label_tag :"OS Family" %>    
+                    <%= s.text_field :os_family, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="os-family">OS-Family :-</label>
-                    <label for="os-family">  </label>
+                    <%= label_tag :"OS Name" %>    
+                    <%= s.text_field :os_name, disabled: true %>
                 </div>
-                                            
                 <div class="form-group col-sm-4">
-                    <label for="os-name">OS-Name :-</label>
-                    <label for="os-name">  </label>
+                    <%= label_tag :"OS Version" %>    
+                    <%= s.text_field :os_version, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="os-Version">OS-Version :-</label>
-                    <label for="os-Version">  </label>
+                    <%= label_tag :"Serial" %>    
+                    <%= s.text_field :serial, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="serial">Serial :-</label>
-                    <label for="serial">  </label>
+                    <%= label_tag :"Model" %>    
+                    <%= s.text_field :model, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="Model">Model :-</label>
-                    <label for="Model">  </label>
+                    <%= label_tag :"Manufacturer" %>    
+                    <%= s.text_field :manufacturer, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="manufacturer">Manufacturer :-</label>
-                    <label for="manufacturer">  </label>
+                    <%= label_tag :"Uptime" %>    
+                    <%= s.text_field :uptime, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="uptime">Uptime :-</label>
-                    <label for="uptime">  </label>
+                    <%= label_tag :"Form Factor" %>    
+                    <%= s.text_field :form_factor, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="form-factor">Form-Factor :-</label>
-                    <label for="form-factor">  </label>
+                    <%= label_tag :"OS Bit" %>    
+                    <%= s.text_field :pc_os_bit, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="pc-os-bit">OS-Bit :-</label>
-                    <label for="pc-os-bit">  </label>
+                    <%= label_tag :"Memory" %>    
+                    <%= s.text_field :pc_memory, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="pc-memory">Memory :-</label>
-                    <label for="pc-memory">  </label>
+                    <%= label_tag :"No. Processor" %>    
+                    <%= s.text_field :pc_num_processor, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="pc-num-processor">No. Processor :-</label>
-                    <label for="pc-num-processor">  </label>
+                    <%= label_tag :"OS Installation Date" %>    
+                    <%= s.text_field :pc_date_os_installation, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="pc_date_os_installation">OS Installation Date :-</label>
-                    <label for="pc_date_os_installation">  </label>
+                    <%= label_tag :"Org ID" %>    
+                    <%= s.text_field :man_org_id, disabled: true %>
                 </div>
-
                 <div class="form-group col-sm-4">
-                    <label for="man_org_id">man_org_id :-</label>
-                    <label for="man_org_id">  </label>
+                    <%= label_tag :"System ID" %>    
+                    <%= s.text_field :system_id, disabled: true %>
                 </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="system_id">System ID :-</label>
-                    <label for="system_id">  </label>
-                </div>
-            </form>
+            <% end %>
         </div>
     </div>
 </div>

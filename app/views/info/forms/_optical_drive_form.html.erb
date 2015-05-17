@@ -1,40 +1,42 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            Optical Drive 
+            <a data-toggle="collapse" data-parent="#accordion" href="#optical_detail">
+                <span class="text-primary">
+                    Optical Drives
+                </span>
+            </a>
         </h4>
     </div>
                         
     <div id="optical_detail" class="panel-collapse collapse">
-        <div class="panel-body bg-primary">
-
-            <!--  Form for Optical Drive  -->
-            <form class="form-inline" role="form">
-                <div class="form-group col-sm-4">
-                    <label for="optical_drive_caption">Caption :-</label>
-                    <label for="optical_drive_caption">  </label>
+        <div class="panel-body">
+        <% @op_drive.each do |od| %>
+            <%= form_for od, url: {action: "hardware"} do |b| %>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Caption" %>    
+                        <%= b.text_field :optical_drive_caption, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Model" %>    
+                        <%= b.text_field :optical_drive_model, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Device ID" %>    
+                        <%= b.text_field :optical_drive_device_id, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Mount Point" %>    
+                        <%= b.text_field :optical_drive_mount_point, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Serial" %>    
+                        <%= b.text_field :optical_drive_serial, disabled: true %>
+                    </div>
                 </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="optical_drive_model">Model :-</label>
-                    <label for="optical_drive_model">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="optical_drive_device_id">Device ID :-</label>
-                    <label for="optical_drive_device_id">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="optical_drive_mount_point">Mount Point :-</label>
-                    <label for="optical_drive_mount_point">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="optical_drive_serial">Serial :-</label>
-                    <label for="optical_drive_serial">  </label>
-                </div>
-            </form>
+            <% end %>
+        <% end %>
         </div>
     </div>
 </div>

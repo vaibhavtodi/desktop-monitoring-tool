@@ -1,35 +1,37 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            SCSI Controller 
+            <a data-toggle="collapse" data-parent="#accordion" href="#scsi_detail">
+                <span class="text-warning">
+                    SCSI Controller
+                </span>
+            </a>
         </h4>
     </div>
-                        
     <div id="scsi_detail" class="panel-collapse collapse">
-        <div class="panel-body bg-primary">
-
-            <!--  Form for SCSI  -->
-            <form class="form-inline" role="form">
-                <div class="form-group col-sm-4">
-                    <label for="name">Name :-</label>
-                    <label for="name">  </label>
+        <div class="panel-body">
+        <% @scsi_c.each do |sc| %>
+            <%= form_for sc, url: {action: "hardware"} do |b| %>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Name" %>    
+                        <%= b.text_field :name, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Manufacturer" %>    
+                        <%= b.text_field :manufacturer, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Device ID" %>    
+                        <%= b.text_field :device_id, disabled: true %>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <%= label_tag :"Type" %>    
+                        <%= b.text_field :type, disabled: true %>
+                    </div>
                 </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="manufacturer">Manufacturer :-</label>
-                    <label for="manufacturer">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="device_id">Device ID :-</label>
-                    <label for="device_id">  </label>
-                </div>
-
-                <div class="form-group col-sm-4">
-                    <label for="type">Type :-</label>
-                    <label for="type">  </label>
-                </div>
-            </form>
+            <% end %>
+        <% end %>
         </div>
     </div>
 </div>
