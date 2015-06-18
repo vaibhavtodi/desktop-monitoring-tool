@@ -12,78 +12,145 @@
     <div id="windows_detail" class="panel-collapse collapse">
         <div class="panel-body">
             <%= form_for @win, url: {action: "index"} do |b| %>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Build Number" %>    
-                    <%= b.text_field :windows_build_number, disabled: true %>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <%= label_tag :"Build-Num" %>
+                    </div>
+                        <div class="col-sm-3">    
+                            <%= b.text_field :windows_build_number, disabled: true %>
+                        </div>
+
+                    <div class="col-sm-1">
+                        <%= label_tag :"User-Name" %>
+                    </div>
+                        <div class="col-sm-3">    
+                            <%= b.text_field :windows_user_name, disabled: true %>
+                        </div>
+
+                    <div class="col-sm-1">
+                        <%= label_tag :"Workgroup" %>
+                    </div>
+                        <div class="col-sm-3">    
+                            <%= b.text_field :windows_workgroup, disabled: true %>
+                        </div>
                 </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"User Name" %>    
-                    <%= b.text_field :windows_user_name, disabled: true %>
+
+                <div class="row">
+                    <div class="col-sm-1">
+                        <%= label_tag :"Dom-Short" %>
+                    </div>
+                        <div class="col-sm-3">    
+                            <%= b.text_field :windows_domain_short, disabled: true %>
+                        </div>
+
+                    <div class="col-sm-1">
+                        <%= label_tag :"Dom-Cntrlr" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_domain_controller_name, disabled: true %>
+                        </div>
+
+                    <div class="col-sm-1">
+                        <%= label_tag :"Dom-C-Add" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_domain_controller_address, disabled: true %>
+                        </div>
                 </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Workgroup" %>    
-                    <%= b.text_field :windows_workgroup, disabled: true %>
+
+                <div class="row">
+                    <div class="col-sm-1">
+                        <%= label_tag :"Dom-Role" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_domain_role, disabled: true %>
+                        </div>
+
+                    <div class="col-sm-1">
+                        <%= label_tag :"Dom-part" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_part_of_domain, disabled: true %>
+                        </div>
+                    
+                    <div class="col-sm-1">
+                        <%= label_tag :"ID-Num" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_id_number, disabled: true %>
+                        </div>
                 </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Domain Short" %>    
-                    <%= b.text_field :windows_domain_short, disabled: true %>
+
+                <div class="row">
+                    <div class="col-sm-1">
+                        <%= label_tag :"Time-Cap" %>
+                    </div>
+                        <div class="col-sm-3">    
+                            <%= b.text_field :windows_time_caption, disabled: true %>
+                        </div>
+
+                    <div class="col-sm-1">
+                        <%= label_tag :"T-Daylight" %>
+                    </div>
+                        <div class="col-sm-3">    
+                            <%= b.text_field :windows_time_daylight, disabled: true %>
+                        </div>
+                    
+                    <div class="col-sm-1">
+                        <%= label_tag :"Boot-Dev" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_boot_device, disabled: true %>
+                        </div>
                 </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Domain Cntrl Add" %>    
-                    <%= b.text_field :windows_domain_controller_address, disabled: true %>
+
+                <div class="row">
+                    <div class="col-sm-1">
+                        <%= label_tag :"Country" %>
+                    </div>
+                        <div class="col-sm-3">    
+                            <%= b.text_field :windows_country_code, disabled: true %>
+                        </div>
+                    
+                    <div class="col-sm-1">
+                        <%= label_tag :"Language" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_language, disabled: true %>
+                        </div>
+
+                    <div class="col-sm-1">
+                        <%= label_tag :"Reg-User" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_registered_user, disabled: true %>
+                        </div>
                 </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Domain Cnrtl Name" %>    
-                    <%= b.text_field :windows_domain_controller_name, disabled: true %>
+                    
+                <div class="row">
+                    <div class="col-sm-1">
+                        <%= label_tag :"Serv-Pack" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_service_pack, disabled: true %>
+                        </div>
+
+                    <div class="col-sm-1">
+                        <%= label_tag :"Version" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_version, disabled: true %>
+                        </div>
+                    
+                    <div class="col-sm-1">
+                        <%= label_tag :"Install-Dir" %>    
+                    </div>
+                        <div class="col-sm-3">
+                            <%= b.text_field :windows_install_directory, disabled: true %>
+                        </div>
                 </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Domain Role" %>    
-                    <%= b.text_field :windows_domain_role, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Part of Domain" %>    
-                    <%= b.text_field :windows_part_of_domain, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"ID Number" %>    
-                    <%= b.text_field :windows_id_number, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Time Caption" %>    
-                    <%= b.text_field :windows_time_caption, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Time Daylight" %>    
-                    <%= b.text_field :windows_time_daylight, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Boot Device" %>    
-                    <%= b.text_field :windows_boot_device, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Country Code" %>    
-                    <%= b.text_field :windows_country_code, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Language" %>    
-                    <%= b.text_field :windows_language, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Reg User" %>    
-                    <%= b.text_field :windows_registered_user, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Service Pack" %>    
-                    <%= b.text_field :windows_service_pack, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Version" %>    
-                    <%= b.text_field :windows_version, disabled: true %>
-                </div>
-                <div class="form-group col-sm-4">
-                    <%= label_tag :"Install Directory" %>    
-                    <%= b.text_field :windows_install_directory, disabled: true %>
-                </div>
+            </div>
             <% end %>
         </div>
     </div>

@@ -13,77 +13,85 @@
         <div class="panel-body">
             <% @hd.each do |hdd| %>
                 <%= form_for hdd, url: {action: "hardware"} do |b| %>
-                    <div class="row">    
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :Caption %>    
-                            <%= b.text_field :hard_drive_caption, disabled: true %>
+                    <div class="form-group">    
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <%= label_tag :Caption %>    
+                            </div>
+                                <div class="col-sm-3">
+                                    <%= b.text_field :hard_drive_caption, disabled: true %>
+                                </div>
+
+                            <div class="col-sm-1">
+                                <%= label_tag :Index %>
+                            </div>
+                                <div class="col-sm-3">
+                                    <%= b.text_field :hard_drive_index, disabled: true %>
+                                </div>
+
+                            <div class="col-sm-1">
+                                <%= label_tag :"Device ID" %>
+                            </div>
+                                <div class="col-sm-3">
+                                    <%= b.text_field :hard_drive_device_id, disabled: true %>
+                                </div>
                         </div>
 
                         <div class="form-group col-sm-4">
-                            <%= label_tag :Index %>
-                            <%= b.text_field :hard_drive_index, disabled: true %>
-                        </div>
+                                <%= label_tag :"Interface Type" %>
+                                <%= b.text_field :hard_drive_interface_type, disabled: true %>
+                            </div>
 
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"Device ID" %>
-                            <%= b.text_field :hard_drive_device_id, disabled: true %>
-                        </div>
+                            <div class="form-group col-sm-4">
+                                <%= label_tag :Manufacturer %>
+                                <%= b.text_field :hard_drive_manufacturer, disabled: true %>
+                            </div>
 
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"Interface Type" %>
-                            <%= b.text_field :hard_drive_interface_type, disabled: true %>
-                        </div>
+                            <div class="form-group col-sm-4">
+                                <%= label_tag :"Model" %>
+                                <%= b.text_field :hard_drive_model, disabled: true %>
+                            </div>
 
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :Manufacturer %>
-                            <%= b.text_field :hard_drive_manufacturer, disabled: true %>
-                        </div>
+                            <div class="form-group col-sm-4">
+                                <%= label_tag :"Serial" %>
+                                <%= b.text_field :hard_drive_serial, disabled: true %>
+                            </div>
 
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"Model" %>
-                            <%= b.text_field :hard_drive_model, disabled: true %>
-                        </div>
+                            <div class="form-group col-sm-4">
+                                <%= label_tag :"Size" %>
+                                <%= b.text_field :hard_drive_size, disabled: true %>
+                            </div>
 
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"Serial" %>
-                            <%= b.text_field :hard_drive_serial, disabled: true %>
-                        </div>
+                            <div class="form-group col-sm-4">
+                                <%= label_tag :"Partitions" %>
+                                <%= b.text_field :hard_drive_partitions, disabled: true %>
+                            </div>  
 
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"Size" %>
-                            <%= b.text_field :hard_drive_size, disabled: true %>
-                        </div>
+                            <div class="form-group col-sm-4">
+                                <%= label_tag :"status" %>
+                                <%= b.text_field :hard_drive_status, disabled: true %>
+                            </div>
 
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"Partitions" %>
-                            <%= b.text_field :hard_drive_partitions, disabled: true %>
-                        </div>  
+                            <div class="form-group col-sm-4">
+                                <%= label_tag :"Model Family" %>
+                                <%= b.text_field :hard_drive_model_family, disabled: true %>
+                            </div>
 
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"status" %>
-                            <%= b.text_field :hard_drive_status, disabled: true %>
-                        </div>
+                            <div class="form-group col-sm-4">
+                                <%= label_tag :"Firmware" %>
+                                <%= b.text_field :hard_drive_firmware, disabled: true %>
+                            </div>
 
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"Model Family" %>
-                            <%= b.text_field :hard_drive_model_family, disabled: true %>
-                        </div>
+                            <div class="form-group col-sm-4">
+                                <%= label_tag :"Serial" %>
+                                <%= b.text_field :hard_drive_serial, disabled: true %>
+                            </div>
 
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"Firmware" %>
-                            <%= b.text_field :hard_drive_firmware, disabled: true %>
+                            <div class="form-group col-sm-4">
+                                <%= label_tag :"SCSI Logical Unit" %>
+                                <%= b.text_field :hard_drive_scsi_logical_unit, disabled: true %>
+                            </div>
                         </div>
-
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"Serial" %>
-                            <%= b.text_field :hard_drive_serial, disabled: true %>
-                        </div>
-
-                        <div class="form-group col-sm-4">
-                            <%= label_tag :"SCSI Logical Unit" %>
-                            <%= b.text_field :hard_drive_scsi_logical_unit, disabled: true %>
-                        </div>
-                    </div>
                 <% end %>
             <% end %>
         </div>
