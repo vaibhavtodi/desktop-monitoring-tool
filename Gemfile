@@ -18,8 +18,7 @@ gem 'bson_ext'
 gem 'devise'
 gem 'bootstrap-sass'
 
-# gem for heroku
-gem 'rails_12factor', group: :production
+gem 'execjs'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
